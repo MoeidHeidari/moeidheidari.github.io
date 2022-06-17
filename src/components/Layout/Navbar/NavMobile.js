@@ -60,9 +60,9 @@ const NavbarMobile = () => {
           <NavItem>
             <Link to="/blog">blog</Link>
           </NavItem>
-          <NavItem style={{ width: 'auto' }}>
+          {/* <NavItem style={{ width: 'auto' }}>
             <DarkModeButton />
-          </NavItem>
+          </NavItem> */}
         </NavItemsBottomNav>
       </MobileMenuWrapper>
     </>

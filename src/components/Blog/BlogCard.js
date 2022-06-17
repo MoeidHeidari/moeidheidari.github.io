@@ -13,8 +13,7 @@ const PostWrapper = styled.article`
   margin-bottom: 70px;
   /* margin-top: 100px; */
   padding: 30px 30px;
-  border-top: 5px solid
-    ${p => (p.theme.dark ? p.theme.accentColor : p.theme.primaryColor)};
+
   border-radius: 10px;
   box-shadow: ${p => p.theme.shadowSmall};
   background-color: ${p => p.theme.secondaryColor};

@@ -12,14 +12,14 @@ const SplitLayoutWrapper = styled.section`
 
   display: grid;
   grid-template-columns: minmax(750px, 1fr) 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 70px;
   grid-template-areas: 'post side';
 
   .layout__content {
-    grid-area: post;
+    grid-area: side;
   }
   .layout__aside {
-    grid-area: side;
+    grid-area: post ;
   }
 
   @media ${props => props.theme.media.fablet} {
@@ -39,12 +39,13 @@ const SplitLayoutWrapper = styled.section`
   }
 `;
 
-const SplitLayout = ({ content, aside }) => (
+const SplitLayout = ({ aside, content }) => (
   <SplitLayoutWrapper>
-    <section className="layout__content">{content && content}</section>
-    <section className="layout__aside">
+     <section className="layout__aside">
       <aside className="sticky__aside">{aside && aside}</aside>
     </section>
+    <section className="layout__content">{content && content}</section>
+   
   </SplitLayoutWrapper>
 );
 

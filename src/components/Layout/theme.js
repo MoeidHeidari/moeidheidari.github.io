@@ -51,7 +51,7 @@ export const themedarkblue = {
   bg: '#0B0D18',
   primaryColor: '#6D83F2',
   secondaryColor: '#0F1221',
-  accentColor: '#15182E',
+  accentColor: '#484E77',
   primaryBlack: '#F8F8F8',
   elevation0: '#6D83F2',
   primaryText: '#F8F8F8',

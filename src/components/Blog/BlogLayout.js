@@ -12,7 +12,7 @@ const BlogLayout = ({ children, sharerSection }) => {
 
   return (
     <SplitLayout
-      content={children}
+     
       aside={
         <>
           <section>
@@ -31,6 +31,7 @@ const BlogLayout = ({ children, sharerSection }) => {
           {sharerSection && sharerSection}
         </>
       }
+      content={children}
     />
   );
 };

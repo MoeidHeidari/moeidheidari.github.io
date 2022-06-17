@@ -66,7 +66,7 @@ const Skills = () => (
       <PageHeader>My Skillsets</PageHeader>
 
       {/* <SkillPie percent={90} name={"JavaScript"} /> */}
-      <Flex className="skill__icons" justify="space-around" align="center">
+      <Flex className="skill__icons" justify="space-around" align="center" margin-top="200px">
         <FontAwesomeIcon icon={['fab', 'html5']} size="5x" />
         <FontAwesomeIcon icon={['fab', 'js']} size="5x" />
         <FontAwesomeIcon icon={['fab', 'react']} size="5x" />

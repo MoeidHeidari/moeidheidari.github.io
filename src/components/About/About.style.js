@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AboutWrapper = styled.section`
-  margin-bottom: 200px;
+  margin-bottom: 50px;
 
   @media ${props => props.theme.media.tablet} {
     position: relative;
@@ -20,7 +20,7 @@ export const AboutInfo = styled.article`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 100px;
 
   > div:first-child {
     margin-right: 10%;

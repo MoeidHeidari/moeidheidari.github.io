@@ -31,7 +31,7 @@ const RootWrapper = styled(Wrapper)`
 const Layout = ({ children }) => {
   const [theme, toggleTheme, toggleRef] = useDarkMode();
 
-  let currentTheme = theme === 'light' ? themelight : themedark;
+  let currentTheme = themedarkblue;
   if (theme === 'darkblue') {
     currentTheme = themedarkblue;
   }
