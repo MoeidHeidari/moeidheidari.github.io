@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Wrapper from '@common/Wrapper';
 
-import logo from '@src/static/logo_white.svg';
+import logo from '@src/static/logo.svg';
 
 const FooterWrapper = styled.footer`
   width: 100vw;
@@ -28,16 +28,9 @@ const FooterWrapper = styled.footer`
 const Footer = () => (
   <FooterWrapper>
     <Wrapper>
-      <img width="35px" src={logo} alt="anurag hazra" />
+    <img src={logo} alt="Moeid Heidari" href="#home"/>
       <p style={{ float: 'right' }}>
-        Made with love and
-        <a href="https://gatsbyjs.org" target="__blank">
-          &nbsp;gatsby&nbsp;
-        </a>
-        by
-        <a href="https://github.com/anuraghazra" target="__blank">
-          &nbsp;anuraghazra
-        </a>
+        Made by Gatsby
       </p>
     </Wrapper>
   </FooterWrapper>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import PageHeader from '@src/components/common/PageHeader';
 import { Hidden } from 'react-grid-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Flex from '@src/components/common/Flex';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import Tabs from 'react-bootstrap/Tabs';
+import { CircularProgressbar,buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import Tab from 'react-bootstrap/Tab';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Nav from 'react-bootstrap/Nav';
+import Col from 'react-bootstrap/Col';
 
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -42,42 +52,224 @@ const SkillsWrapper = styled.section`
 const WordClouds = () => {
   return (
     <Parallax
-      y={['-350px', '-150px']}
+      y={['25px', '0px']}
       slowerScrollRate={true}
       aria-hidden="true"
       className="skills__word-clouds"
     >
-      <p style={{ top: 50, left: '100%', fontSize: 23 }}>HTML5</p>
-      <p style={{ top: 0, left: 0, fontSize: 25 }}>WebGL</p>
-      <p style={{ top: 200, left: -60, fontSize: 14 }}>CSS3</p>
-      <p style={{ top: '30%', left: '35%', fontSize: 18 }}>figma</p>
-      <p style={{ top: 40, left: '75%', fontSize: 12 }}>antd</p>
-      <p style={{ top: 380, left: '85%', fontSize: 18 }}>MongoDB</p>
-      <p style={{ top: 320, left: '65%', fontSize: 18 }}>Gatsby</p>
-      <p style={{ top: 350, left: 150, fontSize: 20 }}>ES6</p>
-      <p style={{ top: 120, left: '22%', fontSize: 12 }}>blender</p>
+      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+        <Tab eventKey="Development" title="Development">
+        <Container>
+        <Row>
+          <Col xs>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar   value={90} text="Nodejs" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor:"#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 1 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar value={80} text="Typescript" styles={buildStyles({textSize:'12px',
+          backgroundColor: "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 2 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar value={65} text="C++" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 3 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar  value={60} text="Java" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 3 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar  value={40} text="Golang" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+        </Row>
+      </Container>
+        </Tab>
+        <Tab eventKey="DevOps" title="DevOps">
+        <Container>
+        <Row>
+          <Col xs>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar  value={100} text="Kurdish" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 1 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar value={100} text="Persian" styles={buildStyles({textSize:'12px',
+          backgroundColor: "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 2 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar  value={75} text="English" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 3 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar  value={20} text="Russian" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor:"#6A98F0",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+        </Row>
+      </Container>
+        </Tab>
+        <Tab eventKey="Foundamentals" title="Foundamentals">
+        <Container>
+        <Row>
+          <Col xs>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={0} text="Kurdish" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 1 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={0} text="Persian" styles={buildStyles({textSize:'12px',
+          backgroundColor: "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 2 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={0} text="English" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 3 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={0} text="Russian" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+        </Row>
+      </Container>
+        </Tab>
+      </Tabs>
     </Parallax>
   );
 };
+
+const Languages = () => {
+  return (
+    <Parallax
+      y={['25px', '0px']}
+      slowerScrollRate={true}
+      aria-hidden="true"
+      className="skills__word-clouds"
+    >
+
+
+      <Container>
+        <Row>
+          <Col xs>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={100} text="Kurdish" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 1 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={100} text="Persian" styles={buildStyles({textSize:'12px',
+          backgroundColor: "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 2 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={75} text="English" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+          <Col xs={{ order: 3 }}>
+          <div style={{ width: 150, height: 150 }}>
+          <CircularProgressbar background backgroundPadding={6} value={20} text="Russian" styles={buildStyles({textSize:'12px',
+          backgroundColor:  "#6A98F0",
+          textColor: "#fff",
+          pathColor: "#fff",
+          trailColor: "transparent"})}/>
+          </div>
+          </Col>
+        </Row>
+      </Container>
+    </Parallax>
+  );
+}
 
 const Skills = () => (
   <SkillsWrapper>
     <ParallaxProvider>
       <PageHeader>My Skillsets</PageHeader>
-
-      {/* <SkillPie percent={90} name={"JavaScript"} /> */}
-      <Flex className="skill__icons" justify="space-around" align="center" margin-top="200px">
-        <FontAwesomeIcon icon={['fab', 'html5']} size="5x" />
-        <FontAwesomeIcon icon={['fab', 'js']} size="5x" />
-        <FontAwesomeIcon icon={['fab', 'react']} size="5x" />
-        <FontAwesomeIcon icon={['fab', 'node']} size="5x" />
-      </Flex>
-
-      <Hidden md xs sm>
         <WordClouds />
-      </Hidden>
+     
+    </ParallaxProvider>
+    <ParallaxProvider>
+      <PageHeader>Languages</PageHeader>
+
+
+
+     
+        <Languages />
+     
     </ParallaxProvider>
   </SkillsWrapper>
+
 );
 
 export default Skills;

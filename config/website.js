@@ -1,11 +1,11 @@
 const meta = {
   // Metadata
-  siteTitle: 'Anurag Hazra - Creative Web Designer',
+  siteTitle: 'Moeid Heidari - Creative Software Developer',
   siteDescription:
-    'Anurag Hazra - Creative frontEnd web developer who loves javascript and modern web technologies.',
-  siteTitleAlt: 'Anurag Hazra',
-  siteShortName: 'Anurag Hazra',
-  siteUrl: 'https://anuraghazra.github.io', // No trailing slash!
+    'Moeid Heidari - Creative software developer who loves modern web technologies.',
+  siteTitleAlt: 'Moeid Heidari',
+  siteShortName: 'Moeid Heidari',
+  siteUrl: 'https://anuraghazru.github.io', // No trailing slash!
 };
 
 const social = {
@@ -17,7 +17,7 @@ const social = {
 const website = {
   ...meta,
   ...social,
-  disqusShortName: 'anuraghazra',
+  disqusShortName: 'moeidheidari',
   googleAnalyticsID: 'UA-119972196-1',
   // Manifest
   themeColor: '#6D83F2',

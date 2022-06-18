@@ -11,7 +11,7 @@ const SplitLayoutWrapper = styled.section`
   }
 
   display: grid;
-  grid-template-columns: minmax(750px, 1fr) 1fr;
+  grid-template-columns: minmax(900px, 1fr) 1fr;
   grid-column-gap: 70px;
   grid-template-areas: 'post side';
 
@@ -19,6 +19,7 @@ const SplitLayoutWrapper = styled.section`
     grid-area: side;
   }
   .layout__aside {
+
     grid-area: post ;
   }
 
@@ -27,7 +28,7 @@ const SplitLayoutWrapper = styled.section`
     version minmax was breaking the layout */
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 30px;
+    grid-row-gap: 50px;
     grid-template-areas:
       'post post'
       'side side';
