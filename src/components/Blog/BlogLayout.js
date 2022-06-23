@@ -11,11 +11,11 @@ const BlogLayout = ({ children, sharerSection }) => {
   const { randomSlug, randomTitle } = useRandomBlogPost();
 
   return (
-    <SplitLayout
-     
-      aside={
-        <>
-          <section>
+
+
+    <div class="container">
+       <div class="row">
+       <section>
             <h4>Random post</h4>
             <Link style={{ fontSize: '16px' }} to={randomSlug}>
               {randomTitle}
@@ -29,10 +29,36 @@ const BlogLayout = ({ children, sharerSection }) => {
             <br />
           </section>
           {sharerSection && sharerSection}
-        </>
-      }
-      content={children}
-    />
+       </div>
+       <div class="row">
+       {children}
+       </div>
+    </div>
+
+    // <SplitLayout
+     
+    
+
+    //   aside={
+    //     <>
+          // <section>
+          //   <h4>Random post</h4>
+          //   <Link style={{ fontSize: '16px' }} to={randomSlug}>
+          //     {randomTitle}
+          //   </Link>
+          //   <br />
+          //   <br />
+          // </section>
+          // <section>
+          //   <h4>Tags</h4>
+          //   <Tags />
+          //   <br />
+          // </section>
+          // {sharerSection && sharerSection}
+    //     </>
+    //   }
+    //   content={children}
+    // />
   );
 };
 
