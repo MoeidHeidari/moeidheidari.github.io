@@ -1,9 +1,9 @@
 {
-  "name": "anurag-hazra",
+  "name": "Moeidheidari",
   "private": true,
-  "description": "Anurag Hazra Portfolio Site",
+  "description": "Personal blog",
   "version": "0.1.0",
-  "author": "Anurag Hazra <hazru.anurag@gmail.com>",
+  "author": "Moeid Heidari <moeidtopcoder2@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
