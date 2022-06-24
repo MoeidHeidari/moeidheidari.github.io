@@ -24,7 +24,7 @@ const BlogPost = ({ data, pageContext }) => {
     url: baseSlugUrl,
   };
 
-  const githubLink = `https://github.com/moeidheidari/moeidheidari.github.io/tree/develop/content${pageContext.slug}/index.md`;
+  const githubLink = `https://github.com/MoeidHeidari/moeidheidari.github.io/tree/main/content/blog/${pageContext.slug}/index.md`;
 
   return (
     <Layout>
