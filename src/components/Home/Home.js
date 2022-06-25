@@ -58,10 +58,10 @@ const Home = () => {
         <div className="home__text">
           <p>Hello, I’m</p>
           <h1>Moeid</h1>
-          <p className="adjust">CREATIVE SOFTWARE DEVELOPER</p>
+          <p className="adjust">SOFTWARE DEVELOPER</p>
 
           <div className="home__CTA">
-            <Button className="cta" as="a" href="#">
+            <Button className="cta" as="a" href="https://drive.google.com/uc?export=download&id=1eAdVXG5h8Pe4sFc1r1xiYtHWYjsfXN4d">
               Download Resume
             </Button>
 
