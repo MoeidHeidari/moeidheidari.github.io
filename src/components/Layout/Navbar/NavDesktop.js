@@ -23,6 +23,9 @@ const NavDesktop = () => {
           <NavItem>
             <Link to="/blog">blog</Link>
           </NavItem>
+          <NavItem>
+            <Link to="/publications">publications</Link>
+          </NavItem>
           {/* <NavItem>
             <ToggleSwitch />
           </NavItem> */}
