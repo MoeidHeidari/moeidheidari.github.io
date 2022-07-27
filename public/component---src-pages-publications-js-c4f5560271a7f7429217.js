@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{"4IYq":function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),l=n.n(t),o=n("yBb5"),r=n("vrFN"),c=n("+ZDr"),s=n.n(c);a.default=function(){return l.a.createElement(o.a,null,l.a.createElement(r.a,{title:"publications page"}),l.a.createElement("h1",null,"Opps, seems like you are lost!"),l.a.createElement("p",null,"Mind going back? or ",l.a.createElement(s.a,{to:"/blog"},"read some blogs")))}}}]);
+//# sourceMappingURL=component---src-pages-publications-js-c4f5560271a7f7429217.js.map
