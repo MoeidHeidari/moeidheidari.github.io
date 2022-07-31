@@ -12,12 +12,15 @@ const StyledBack = styled.div`
   border-radius: 5px;
   border-color: #475289;
   border-width: thin;
+  position: relative;
 
   background-color: ${props => props.theme.secondaryColor};
 
   padding-left: 20px;
   border-style: solid;
   padding-bottom: 20px;
+
+ 
 `;
 const TitleText = styled.h1`
   vertical-align: middle;
@@ -47,30 +50,30 @@ const PublishDate = styled.span`
   font-size: 15px;
 `;
 
-const PublicationItem = ({ title, publisher, authors, date, address,DOI }) => {
+const ProjectItem = ({ title, description, year, address,longDescription }) => {
   return (
-
+    
       <StyledBack>
-        <PublishDate aria-label={`publish date ${date}`}>
+        <PublishDate aria-label={`publish date ${year}`}>
           <FontAwesomeIcon color='gray' icon='calendar-alt' />
-          &nbsp;&nbsp;{date}
+          &nbsp;&nbsp;{year}
         </PublishDate>
         <TitleText>{title}</TitleText>
-        <PublisherText>{publisher}</PublisherText>
-        <AuthorsText>{authors}</AuthorsText>
-        <DOIText>DOI: {DOI}</DOIText>
+        <PublisherText>{description}</PublisherText>
+        <AuthorsText>{longDescription}</AuthorsText>
         <Link to={address}>
-        <Button href={address}>
-              Link to publication
+        <Button >
+              Link to project
             </Button>
         </Link>
+        
       </StyledBack>
-  
+    
   );
 };
 
-PublicationItem.propTypes = {
+ProjectItem.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default PublicationItem;
+export default ProjectItem;
