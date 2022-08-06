@@ -15,14 +15,17 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
+        
           {this.props.preBodyComponents}
           <noscript>This site runs best with JavaScript enabled.</noscript>
+          
           <div
             key="body"
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          
         </body>
       </html>
     );

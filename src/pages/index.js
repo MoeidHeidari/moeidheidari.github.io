@@ -11,14 +11,19 @@ import CreativeCoding from '@components/CreativeCoding/CreativeCoding';
 import Concepts from '@components/Concepts/Concepts';
 import Contact from '@components/Contact/Contact';
 
+
 const IndexPage = () => (
+  
   <Layout>
+    
     <SEO title="Moeid Heidari - Software Developer" />
 
     <Home />
+    
     <About />
     {/* <Skills /> */}
     <Contact />
+    
   </Layout>
 );
 

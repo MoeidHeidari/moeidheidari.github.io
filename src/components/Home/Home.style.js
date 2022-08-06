@@ -78,12 +78,5 @@ export const HomeWrapper = styled.section`
     z-index: -1;
   }
 
-  @media ${props => props.theme.media.tablet} {
-    margin-top: 80px;
-
-    .svg-rect {
-      top: 0px;
-      opacity: 0.8;
-    }
-  }
+  
 `;
