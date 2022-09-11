@@ -1,3 +1,9 @@
+---
+title: How to redirect traffic from external ip to the specific KIND (Kubernetes in docker) cluster with IPtables (DNAT)
+date: 2022-09-11 21:30:00
+author: Moeid Heidari
+tags: ["Cloud computing", "DevOps","Cloud","DNAT","Kind"]
+---
 # How to redirect traffic from external ip to the specific KIND (Kubernetes in docker) cluster with IPtables (DNAT).
 
 ### Introduction
