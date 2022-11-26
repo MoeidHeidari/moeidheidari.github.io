@@ -65,7 +65,7 @@ const Home = () => {
           <p className="adjust">SOFTWARE DEVELOPER</p>
 
           <div className="home__CTA">
-            <Button className="cta" as="a" href="https://drive.google.com/uc?export=download&id=1AmtCOTF7Wy_70vln6fBXrAZLRNu6AdBA">
+            <Button className="cta" as="a" href="https://drive.google.com/uc?export=download&id=1Z1azz2738RxDt7pHSPgXhzsx3fdr3-jf">
               Download Resume
             </Button>
 
