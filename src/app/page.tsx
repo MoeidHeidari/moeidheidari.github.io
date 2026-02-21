@@ -1,10 +1,10 @@
 import { Badges } from "./badges";
 import { BlogPosts } from "./components/posts";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 export default function Page() {
   return (
     <section>
-      <Text py={4}>My Portfolio</Text>
+      <Heading py={4}>My Portfolio</Heading>
       <Flex maxW="100%">
         <Text>
           With over 17 years of expertise in software engineering, I specialize
@@ -27,13 +27,7 @@ export default function Page() {
           and reliability.
         </Text>
       </Flex>
-      <div
-        className="
-          my-8
-        "
-      >
         <Badges />
-      </div>
     </section>
   );
 }

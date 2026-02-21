@@ -4,7 +4,7 @@ import { HiAtSymbol, HiStar } from "react-icons/hi"
 
 export const Badges = () => {
   return (
-    <HStack py={10}>
+    <HStack py={5}>
       <Badge size="lg" variant="outline">Kubernetes</Badge>
       <Badge size="lg" variant="outline">AWS</Badge>
       <Badge size="lg" variant="outline">Java</Badge>

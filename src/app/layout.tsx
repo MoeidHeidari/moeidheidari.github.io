@@ -9,6 +9,7 @@ import { baseUrl } from './sitemap'
 import { Provider } from 'src/components/ui/provider'
 import { AbsoluteCenter, Box, Flex } from '@chakra-ui/react'
 import Navbar from './components/nav'
+import { Latests } from './Latests'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -71,14 +72,14 @@ export default function RootLayout({
 >
   <Navbar />
 </Flex>
-          
-          
         <main>
           <Box px="14%" py={20}>
-
           {children}
           </Box>
-          <Box px="14%" py={100}>
+          <Box px="14%" py={5}>
+            <Latests/>
+            </Box>
+          <Box px="14%" py={5}>
           <Footer />
           </Box>
           <Analytics />
