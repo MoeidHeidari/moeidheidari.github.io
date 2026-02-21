@@ -73,10 +73,10 @@ export default function RootLayout({
   <Navbar />
 </Flex>
         <main>
-          <Box px="14%" py={20}>
+          <Box px="14%" py="10%">
           {children}
           </Box>
-          <Box px="14%" py={5}>
+          <Box px="14%" py={10}>
             <Latests/>
             </Box>
           <Box px="14%" py={5}>

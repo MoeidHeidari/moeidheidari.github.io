@@ -7,9 +7,8 @@ export function BlogPosts() {
 
   return (
     <Grid
-      h="200px"
       templateRows="repeat(2, 1fr)"
-      templateColumns="repeat(5, 1fr)"
+      templateColumns="repeat(4, 1fr)"
       gap={2}
     >
       {allBlogs
@@ -24,8 +23,6 @@ export function BlogPosts() {
         .map((post) => (
           <GridItem rowSpan={1} colSpan={1} key={post.slug}>
             <Card.Root
-              
-              width="320px"
               backgroundColor={"transparent"}
               _hover={{
                 "borderColor": "whiteAlpha.400",
@@ -53,8 +50,6 @@ export function BlogPosts() {
             </Card.Root>
           </GridItem>
         ))}
-
     </Grid>
-    
   );
 }
