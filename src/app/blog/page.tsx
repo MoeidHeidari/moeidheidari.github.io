@@ -19,13 +19,13 @@ export const metadata = {
 }
 
 type BlogPageProps = {
-  searchParams?: Promise<{
+  searchParams?: {
     page?: string | string[];
     q?: string | string[];
-  }>;
+  };
 };
 
-export default async function Page({ searchParams }: BlogPageProps) {
+export default function Page({ searchParams }: BlogPageProps) {
   const allPosts = getBlogPosts()
     .slice()
     .sort((a, b) => {
@@ -37,7 +37,7 @@ export default async function Page({ searchParams }: BlogPageProps) {
   const newestPosts = allPosts.slice(0, 3);
   const remainingPosts = allPosts.slice(3);
 
-  const resolvedSearchParams = (await searchParams) ?? {};
+  const resolvedSearchParams = searchParams ?? {};
   const pageParam = Array.isArray(resolvedSearchParams.page)
     ? resolvedSearchParams.page[0]
     : resolvedSearchParams.page;

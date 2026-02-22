@@ -3,13 +3,13 @@ import { Heading, Stack, Text } from "@chakra-ui/react";
 import { Latests } from "./Latests";
 
 type HomePageProps = {
-  searchParams?: Promise<{
+  searchParams?: {
     postsPage?: string | string[];
-  }>;
+  };
 };
 
-export default async function Page({ searchParams }: HomePageProps) {
-  const resolvedSearchParams = (await searchParams) ?? {};
+export default function Page({ searchParams }: HomePageProps) {
+  const resolvedSearchParams = searchParams ?? {};
   const postsPageValue = Array.isArray(resolvedSearchParams.postsPage)
     ? resolvedSearchParams.postsPage[0]
     : resolvedSearchParams.postsPage;

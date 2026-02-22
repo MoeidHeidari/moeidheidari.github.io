@@ -14,12 +14,12 @@ import NextLink from "next/link";
 import { mentorshipProfile } from "./data";
 
 type MentorshipPageProps = {
-  searchParams?: Promise<{
+  searchParams?: {
     reviewsPage?: string | string[];
-  }>;
+  };
 };
 
-export default async function MentorshipPage({ searchParams }: MentorshipPageProps) {
+export default function MentorshipPage({ searchParams }: MentorshipPageProps) {
   const formatNumber = (value: number) => new Intl.NumberFormat("en-US").format(value);
   const formatDateUTC = (value: string) =>
     new Intl.DateTimeFormat("en-US", {
@@ -29,7 +29,7 @@ export default async function MentorshipPage({ searchParams }: MentorshipPagePro
       timeZone: "UTC",
     }).format(new Date(value.includes("T") ? value : `${value}T00:00:00Z`));
 
-  const resolvedSearchParams = (await searchParams) ?? {};
+  const resolvedSearchParams = searchParams ?? {};
   const reviewsPageValue = Array.isArray(resolvedSearchParams.reviewsPage)
     ? resolvedSearchParams.reviewsPage[0]
     : resolvedSearchParams.reviewsPage;

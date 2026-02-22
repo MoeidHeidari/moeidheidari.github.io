@@ -179,11 +179,11 @@ async function getContributionCountsByDateRange(from: string, to: string): Promi
 }
 
 type OpenSourcePageProps = {
-  searchParams?: Promise<{
+  searchParams?: {
     page?: string | string[];
     q?: string | string[];
     year?: string | string[];
-  }>;
+  };
 };
 
 export default async function OpenSourcePage({ searchParams }: OpenSourcePageProps) {
@@ -204,7 +204,7 @@ export default async function OpenSourcePage({ searchParams }: OpenSourcePagePro
       }
       return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
     });
-  const resolvedSearchParams = (await searchParams) ?? {};
+  const resolvedSearchParams = searchParams ?? {};
   const pageParam = Array.isArray(resolvedSearchParams.page)
     ? resolvedSearchParams.page[0]
     : resolvedSearchParams.page;
