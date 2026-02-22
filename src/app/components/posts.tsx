@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "../blog/utils";
-import { Avatar, Box, Button, Card, Grid, GridItem } from "@chakra-ui/react";
+import { Card, Grid, GridItem } from "@chakra-ui/react";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
 
   return (
     <Grid
-      templateRows="repeat(2, 1fr)"
-      templateColumns="repeat(4, 1fr)"
-      gap={2}
+      templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+      gap={{ base: 3, md: 4 }}
     >
       {allBlogs
         .sort((a, b) => {

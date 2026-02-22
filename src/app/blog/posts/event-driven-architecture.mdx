@@ -1,0 +1,28 @@
+---
+title: 'Event-Driven Architecture for Scalable Platforms'
+publishedAt: '2023-11-14'
+summary: 'A practical overview of event-driven patterns, message contracts, and observability for distributed systems.'
+---
+
+Event-driven architecture helps teams decouple services while keeping systems responsive under load. Instead of direct synchronous calls everywhere, services publish events that other services consume asynchronously.
+
+## Why it works well
+
+- Reduces coupling between producer and consumer services.
+- Improves resilience during downstream slowness.
+- Supports independent scaling for heavy consumers.
+
+## Key implementation rules
+
+1. Treat events as versioned contracts.
+2. Keep payloads small and meaningful.
+3. Add idempotency in consumers.
+4. Track retries and dead-letter queues.
+
+## Observability matters
+
+Monitor lag, consumer errors, and processing latency by topic and partition. Visibility into these signals is essential to avoid silent failures.
+
+## Final note
+
+Event-driven systems are powerful, but they require discipline in schema evolution, failure handling, and monitoring. Done right, they unlock strong scalability and team autonomy.

@@ -1,10 +1,9 @@
-import { Badge, HStack, Stack } from "@chakra-ui/react"
-import { HiAtSymbol, HiStar } from "react-icons/hi"
+import { Badge, Flex } from "@chakra-ui/react"
 
 
 export const Badges = () => {
   return (
-    <HStack py={5}>
+    <Flex py={2} wrap="wrap" gap={2}>
       <Badge size="lg" variant="outline">Kubernetes</Badge>
       <Badge size="lg" variant="outline">AWS</Badge>
       <Badge size="lg" variant="outline">Java</Badge>
@@ -16,8 +15,6 @@ export const Badges = () => {
       <Badge size="lg" variant="outline">High Performance Computing</Badge>
       <Badge size="lg" variant="outline">High availability</Badge>
       <Badge size="lg" variant="outline">Distributed systems</Badge>
-      
-      
-    </HStack>
+    </Flex>
   )
 }

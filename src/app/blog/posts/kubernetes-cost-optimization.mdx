@@ -1,0 +1,26 @@
+---
+title: 'Kubernetes Cost Optimization Without Performance Loss'
+publishedAt: '2022-12-18'
+summary: 'A practical checklist for rightsizing clusters, reducing waste, and improving cost visibility in Kubernetes.'
+---
+
+Cloud cost optimization in Kubernetes is usually about better defaults, not aggressive downsizing.
+
+## Start with visibility
+
+Track cost by namespace, team, and workload. Without visibility, optimization discussions become guesswork.
+
+## High-impact improvements
+
+- Right-size requests and limits
+- Remove idle workloads
+- Use autoscaling where traffic fluctuates
+- Schedule noncritical jobs to cheaper windows
+
+## Capacity strategy
+
+Use mixed node pools and isolate bursty workloads. Keep critical paths on stable capacity.
+
+## Keep performance first
+
+Define SLOs before optimization so cost changes never degrade user experience.

@@ -38,13 +38,16 @@ function readMDXFile(filePath: fs.PathOrFileDescriptor) {
 function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file))
+    const absolutePath = path.join(dir, file)
+    let { metadata, content } = readMDXFile(absolutePath)
+    const fileStats = fs.statSync(absolutePath)
     let slug = path.basename(file, path.extname(file))
 
     return {
       metadata,
       slug,
       content,
+      pushedAt: fileStats.mtime.toISOString(),
     }
   })
 }
@@ -76,11 +79,12 @@ export function formatDate(date: string, includeRelative = false) {
     formattedDate = 'Today'
   }
 
-  let fullDate = targetDate.toLocaleString('en-us', {
+  let fullDate = new Intl.DateTimeFormat('en-US', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
-  })
+    timeZone: 'UTC',
+  }).format(targetDate)
 
   if (!includeRelative) {
     return fullDate

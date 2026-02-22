@@ -7,9 +7,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { Provider } from 'src/components/ui/provider'
-import { AbsoluteCenter, Box, Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import Navbar from './components/nav'
-import { Latests } from './Latests'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -47,7 +46,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    
     <html suppressHydrationWarning
       lang="en"
       className={cx(
@@ -56,32 +54,37 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body >
-        <Provider >
-          <Flex 
-  as="header"
-  position="fixed"
-  top="0"
-  backdropBlur={'md'}
-  backdropFilter="auto"
-  backgroundColor={'blackAlpha.700'}
-  w="100%"
-  h={70}
-  zIndex="sticky"
-  p={2}
->
-  <Navbar />
-</Flex>
-        <main>
-          <Box px="14%" py="10%">
-          {children}
-          </Box>
-          <Box px="14%" py={10}>
-            <Latests/>
+      <body>
+        <Provider>
+          <Flex
+            as="header"
+            position="fixed"
+            top="0"
+            backdropBlur="md"
+            backdropFilter="auto"
+            backgroundColor="blackAlpha.700"
+            w="100%"
+            zIndex="sticky"
+          >
+            <Navbar />
+          </Flex>
+          <main>
+            <Box
+              maxW="1200px"
+              mx="auto"
+              pt={{ base: '84px', md: '96px' }}
+              px={{ base: 4, md: 8, lg: 12 }}
+            >
+              {children}
             </Box>
-          <Box px="14%" py={5}>
-          <Footer />
-          </Box>
+            <Box
+              maxW="1200px"
+              mx="auto"
+              pb={{ base: 8, md: 10 }}
+              px={{ base: 4, md: 8, lg: 12 }}
+            >
+              <Footer />
+            </Box>
           <Analytics />
           <SpeedInsights />
         </main>

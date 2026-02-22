@@ -1,94 +1,62 @@
-import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { HiHeart } from "react-icons/hi";
-import { PiTextbox } from "react-icons/pi";
+import { Flex, Icon, Link, Text } from "@chakra-ui/react";
+import { FaEnvelope, FaGithub, FaLinkedin, FaUserTie } from "react-icons/fa";
+import { RiGlobalLine } from "react-icons/ri";
 
 
 export default function Footer() {
+  const connections = [
+    {
+      label: "Website",
+      href: "https://moeidheidari.com",
+      icon: RiGlobalLine,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/moeidheidari",
+      icon: FaGithub,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/moeidheidari",
+      icon: FaLinkedin,
+    },
+    {
+      label: "ADPList",
+      href: "https://adplist.org/mentors/moeid-heidari",
+      icon: FaUserTie,
+    },
+    {
+      label: "Email",
+      href: "mailto:hello@moeidheidari.com",
+      icon: FaEnvelope,
+    },
+  ];
+
   return (
-    <footer
-      className="
-        mb-16
-      "
-    >
-      <Flex gap="4">
-        <Box height="10" order="1">
-          <Flex gap="1">
-          <Icon size="md">
-              <img src="https://favicon.im/github.com" alt="linkedin.com favicon" />
-            </Icon>{"Github"}
+    <footer>
+      <Flex wrap="wrap" gap={3} mt={{ base: 2, md: 4 }}>
+        {connections.map((connection) => (
+          <Link
+            key={connection.label}
+            href={connection.href}
+            target={connection.href.startsWith("http") ? "_blank" : undefined}
+            rel={connection.href.startsWith("http") ? "noreferrer" : undefined}
+            borderWidth="1px"
+            borderColor="whiteAlpha.300"
+            borderRadius="md"
+            px={{ base: 3, md: 4 }}
+            py={{ base: 2, md: 2.5 }}
+            _hover={{ textDecoration: "none", borderColor: "whiteAlpha.500" }}
+          >
+            <Flex align="center" gap={2}>
+              <Icon boxSize={4}>
+                <connection.icon />
+              </Icon>
+              <Text fontSize="sm">{connection.label}</Text>
             </Flex>
-            
-        </Box>
-        <Box height="10" order="1">
-          <Flex gap="1">
-            <Icon size="md">
-              <img src="https://favicon.im/linkedin.com" alt="linkedin.com favicon" />
-            </Icon>ADPList
-          </Flex>
-        </Box>
-        <Box height="10" order="1">
-          <Flex gap="1">
-            <Icon size="md">
-              <img src="https://favicon.im/adplist.org" alt="linkedin.com favicon" />
-            </Icon>ADPList
-          </Flex>
-        </Box>
+          </Link>
+        ))}
       </Flex>
     </footer>
   );
-}
-
-function createColorSprite(srcUrl) {
-    var W, H;
-    const img = new Image;
-    img.src = srcUrl;
-    const channels = [];
-    img.addEventListener("load",() => {
-        channels[0] = imageFilterChannel(img, "red");
-        channels[1] = imageFilterChannel(img, "green");
-        channels[2] = imageFilterChannel(img, "blue");
-        channels[3] = imageFilterChannel(img, "alpha");
-        API.ready = true;
-    }, {once: true});
-
-    const API = {
-        ready: false,
-        drawColored(ctx, x, y, scale, rot, color) { // color is CSS hex color #RRGGBBAA
-                                                    // eg #FFFFFFFF
-            // get RGBA from color string
-            const r = parseInt(color[1] + color[2], 16);
-            const g = parseInt(color[3] + color[4], 16);
-            const b = parseInt(color[5] + color[6], 16);
-            const a = parseInt(color[7] + color[8], 16);
-
-            // Setup location and transformation
-            const ax = Math.cos(rot) * scale;
-            const ay = Math.sin(rot) * scale;
-            ctx.setTransform(ax, ay, -ay, ax, x, y);
-            const offX = -W / 2;
-            const offY = -H / 2;
-
-          
-            // draw alpha first then RGB
-            ctx.globalCompositeOperation = "source-over";
-            ctx.globalAlpha = a / 255;
-            ctx.drawImage(channels[3], offX, offY, W, H);
-
-            ctx.globalCompositeOperation = "lighter";
-
-            ctx.globalAlpha = r / 255;
-            ctx.drawImage(channels[0], offX, offY, W, H);
-            ctx.globalAlpha = g / 255;
-            ctx.drawImage(channels[1], offX, offY, W, H);
-            ctx.globalAlpha = b / 255;
-            ctx.drawImage(channels[2], offX, offY, W, H);
-                  
-            ctx.globalCompositeOperation = "source-over";
-        }
-    };
-    return API;
-}
-
-function imageFilterChannel(img: HTMLImageElement, arg1: string): never {
-  throw new Error("Function not implemented.");
 }
