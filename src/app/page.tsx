@@ -1,20 +1,10 @@
 import { Badges } from "./badges";
 import { Heading, Stack, Text } from "@chakra-ui/react";
 import { Latests } from "./Latests";
+import { getBlogPosts } from "./blog/utils";
 
-type HomePageProps = {
-  searchParams?: {
-    postsPage?: string | string[];
-  };
-};
-
-export default function Page({ searchParams }: HomePageProps) {
-  const resolvedSearchParams = searchParams ?? {};
-  const postsPageValue = Array.isArray(resolvedSearchParams.postsPage)
-    ? resolvedSearchParams.postsPage[0]
-    : resolvedSearchParams.postsPage;
-  const pageValue = Number(postsPageValue ?? "1");
-  const postsPage = Number.isFinite(pageValue) && pageValue > 0 ? pageValue : 1;
+export default function Page() {
+  const posts = getBlogPosts();
 
   return (
     <section>
@@ -41,7 +31,7 @@ export default function Page({ searchParams }: HomePageProps) {
           and reliability.
       </Text>
       <Badges />
-      <Latests currentPage={postsPage} pageSize={6} />
+      <Latests posts={posts} pageSize={6} />
       </Stack>
     </section>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Badge,
   Box,
@@ -10,16 +12,11 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { useMemo, useState } from "react";
 import { mentorshipProfile } from "./data";
 
-type MentorshipPageProps = {
-  searchParams?: {
-    reviewsPage?: string | string[];
-  };
-};
-
-export default function MentorshipPage({ searchParams }: MentorshipPageProps) {
+export default function MentorshipPage() {
+  const [reviewsPage, setReviewsPage] = useState(1);
   const formatNumber = (value: number) => new Intl.NumberFormat("en-US").format(value);
   const formatDateUTC = (value: string) =>
     new Intl.DateTimeFormat("en-US", {
@@ -29,24 +26,18 @@ export default function MentorshipPage({ searchParams }: MentorshipPageProps) {
       timeZone: "UTC",
     }).format(new Date(value.includes("T") ? value : `${value}T00:00:00Z`));
 
-  const resolvedSearchParams = searchParams ?? {};
-  const reviewsPageValue = Array.isArray(resolvedSearchParams.reviewsPage)
-    ? resolvedSearchParams.reviewsPage[0]
-    : resolvedSearchParams.reviewsPage;
-  const pageValue = Number(reviewsPageValue ?? "1");
-  const reviewsPage = Number.isFinite(pageValue) && pageValue > 0 ? pageValue : 1;
   const pageSize = 3;
   const totalReviewPages = Math.max(1, Math.ceil(mentorshipProfile.reviews.length / pageSize));
   const safeReviewPage = Math.min(Math.max(reviewsPage, 1), totalReviewPages);
   const reviewStart = (safeReviewPage - 1) * pageSize;
-  const reviewItems = mentorshipProfile.reviews
-    .slice()
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(reviewStart, reviewStart + pageSize);
-
-  const previousReviewsHref =
-    safeReviewPage > 2 ? `/mentorship?reviewsPage=${safeReviewPage - 1}` : "/mentorship";
-  const nextReviewsHref = `/mentorship?reviewsPage=${safeReviewPage + 1}`;
+  const reviewItems = useMemo(
+    () =>
+      mentorshipProfile.reviews
+        .slice()
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(reviewStart, reviewStart + pageSize),
+    [reviewStart, pageSize]
+  );
   const statsMap = Object.fromEntries(
     mentorshipProfile.stats.map((item) => [item.label, item.value])
   ) as Record<string, string>;
@@ -150,11 +141,21 @@ export default function MentorshipPage({ searchParams }: MentorshipPageProps) {
               Page {safeReviewPage} of {totalReviewPages}
             </Text>
             <Flex gap={2}>
-              <Button asChild size="sm" variant="outline" disabled={safeReviewPage <= 1}>
-                <NextLink href={previousReviewsHref}>Previous</NextLink>
+              <Button
+                size="sm"
+                variant="outline"
+                disabled={safeReviewPage <= 1}
+                onClick={() => setReviewsPage((value) => Math.max(1, value - 1))}
+              >
+                Previous
               </Button>
-              <Button asChild size="sm" variant="outline" disabled={safeReviewPage >= totalReviewPages}>
-                <NextLink href={nextReviewsHref}>Next</NextLink>
+              <Button
+                size="sm"
+                variant="outline"
+                disabled={safeReviewPage >= totalReviewPages}
+                onClick={() => setReviewsPage((value) => Math.min(totalReviewPages, value + 1))}
+              >
+                Next
               </Button>
             </Flex>
           </Flex>

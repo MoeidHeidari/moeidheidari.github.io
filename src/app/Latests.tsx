@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Card,
@@ -7,27 +9,40 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { formatDate, getBlogPosts } from "./blog/utils";
+import { formatDate } from "./blog/date";
 import Link from "next/link";
+import { useMemo, useState } from "react";
 
 type LatestsProps = {
-  currentPage?: number;
+  posts: {
+    slug: string;
+    metadata: {
+      title: string;
+      publishedAt: string;
+      summary: string;
+    };
+    pushedAt?: string;
+  }[];
   pageSize?: number;
 };
 
-export function Latests({ currentPage = 1, pageSize = 4 }: LatestsProps) {
-  const allBlogs = getBlogPosts().sort((a, b) => {
-    const left = new Date(a.pushedAt ?? a.metadata.publishedAt).getTime();
-    const right = new Date(b.pushedAt ?? b.metadata.publishedAt).getTime();
-    return right - left;
-  });
+export function Latests({ posts, pageSize = 4 }: LatestsProps) {
+  const [page, setPage] = useState(1);
+
+  const allBlogs = useMemo(
+    () =>
+      posts.slice().sort((a, b) => {
+        const left = new Date(a.pushedAt ?? a.metadata.publishedAt).getTime();
+        const right = new Date(b.pushedAt ?? b.metadata.publishedAt).getTime();
+        return right - left;
+      }),
+    [posts]
+  );
+
   const totalPages = Math.max(1, Math.ceil(allBlogs.length / pageSize));
-  const safePage = Math.min(Math.max(currentPage, 1), totalPages);
+  const safePage = Math.min(Math.max(page, 1), totalPages);
   const startIndex = (safePage - 1) * pageSize;
   const paginatedPosts = allBlogs.slice(startIndex, startIndex + pageSize);
-
-  const previousHref = safePage > 2 ? `/?postsPage=${safePage - 1}` : "/";
-  const nextHref = `/?postsPage=${safePage + 1}`;
 
   return (
     <Stack width="full" gap={4} py={{ base: 4, md: 6 }}>
@@ -55,11 +70,11 @@ export function Latests({ currentPage = 1, pageSize = 4 }: LatestsProps) {
           Page {safePage} of {totalPages}
         </Text>
         <Flex gap={2}>
-          <Button asChild size="sm" variant="outline" disabled={safePage <= 1}>
-            <Link href={previousHref}>Previous</Link>
+          <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>
+            Previous
           </Button>
-          <Button asChild size="sm" variant="outline" disabled={safePage >= totalPages}>
-            <Link href={nextHref}>Next</Link>
+          <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage((value) => Math.min(totalPages, value + 1))}>
+            Next
           </Button>
         </Flex>
       </Flex>
