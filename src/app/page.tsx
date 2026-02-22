@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <Stack gap={{ base: 5, md: 6 }}>
-      <Heading size={{ base: "2xl", md: "3xl" }}>My Portfolio</Heading>
+      <Heading size={{ base: "2xl", md: "3xl" }}>Moeid Heidari</Heading>
       <Text fontSize={{ base: "md", md: "lg" }} lineHeight={{ base: "1.8", md: "1.9" }}>
           With over 17 years of expertise in software engineering, I specialize
           in architecting and engineering cloud-native solutions, distributed
