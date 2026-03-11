@@ -15,8 +15,7 @@ export function ColorModeProvider(props: ColorModeProviderProps) {
       {...props}
       attribute="class"
       defaultTheme="dark"
-      forcedTheme="dark"
-      enableSystem={false}
+      enableSystem
       disableTransitionOnChange
     />
   )

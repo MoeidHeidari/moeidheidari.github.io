@@ -24,9 +24,18 @@ const Navbar = ({ isMobile = false }) => {
           rel={link.href.startsWith("http") ? "noreferrer" : undefined}
           _hover={{
             color: "white",
-            fontWeight:"medium"
+            fontWeight:"medium",
+            outline: "none",
+            boxShadow: "none",
+            textDecoration: "none"
           }}
-          
+          _focus={{
+            outline: "none",
+            boxShadow: "none"
+          }}
+          _focusVisible={{
+            outline: "none"
+          }}
         >
           {link.name}
         </Link>
