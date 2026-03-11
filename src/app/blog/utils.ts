@@ -7,6 +7,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  topics?: string
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -49,6 +50,10 @@ function getMDXData(dir: string) {
       slug,
       content,
       pushedAt: fileStats.mtime.toISOString(),
+      topics: (metadata.topics ?? '')
+        .split(',')
+        .map((t) => t.trim())
+        .filter(Boolean),
     }
   })
 }

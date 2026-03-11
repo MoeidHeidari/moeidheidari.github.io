@@ -49,12 +49,11 @@ export default function RootLayout({
     <html suppressHydrationWarning
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body>
+      <body style={{ backgroundColor: '#000', color: '#fff' }}>
         <Provider>
           <Flex
             as="header"

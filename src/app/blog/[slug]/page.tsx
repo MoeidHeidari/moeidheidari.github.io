@@ -3,6 +3,7 @@ import { CustomMDX } from '../../components/mdx'
 import { formatDate, getBlogPosts } from '../../blog/utils'
 import { baseUrl } from '../../sitemap'
 import React from 'react'
+import Link from 'next/link'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -54,11 +55,24 @@ export function generateMetadata({ params } : { params: any }) {
 
 export default async function Blog({ params }: { params: any }) {
   const {slug} = await params;
-  let post = getBlogPosts().find((post) => post.slug === slug)
+  const allPosts = getBlogPosts().sort((a, b) =>
+    new Date(b.pushedAt ?? b.metadata.publishedAt).getTime() -
+    new Date(a.pushedAt ?? a.metadata.publishedAt).getTime()
+  )
+  let post = allPosts.find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
   }
+
+  // Find prev/next within the same topic (use first topic, fallback to all posts)
+  const topic = post.topics[0] ?? null
+  const siblingPosts = topic
+    ? allPosts.filter((p) => p.topics.includes(topic))
+    : allPosts
+  const currentIndex = siblingPosts.findIndex((p) => p.slug === slug)
+  const prevPost = currentIndex < siblingPosts.length - 1 ? siblingPosts[currentIndex + 1] : null
+  const nextPost = currentIndex > 0 ? siblingPosts[currentIndex - 1] : null
 
   return (
     <section>
@@ -88,13 +102,47 @@ export default async function Blog({ params }: { params: any }) {
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
+        {topic && (
+          <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>
+            {topic}
+          </span>
+        )}
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+
+      {(prevPost || nextPost) && (
+        <nav style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+          <div style={{ flex: 1 }}>
+            {prevPost && (
+              <Link href={`/blog/${prevPost.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>
+                  ← Previous{topic ? ` in ${topic}` : ''}
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
+                  {prevPost.metadata.title}
+                </div>
+              </Link>
+            )}
+          </div>
+          <div style={{ flex: 1, textAlign: 'right' }}>
+            {nextPost && (
+              <Link href={`/blog/${nextPost.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>
+                  Next{topic ? ` in ${topic}` : ''} →
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
+                  {nextPost.metadata.title}
+                </div>
+              </Link>
+            )}
+          </div>
+        </nav>
+      )}
     </section>
   )
 }

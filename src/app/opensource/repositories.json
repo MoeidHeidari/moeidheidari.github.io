@@ -1,0 +1,70 @@
+{
+  "stats": {
+    "repositories": 68,
+    "stars": 758,
+    "forks": 25,
+    "open_issues": 36
+  },
+  "repos": [
+  {
+    "id": 1105915656,
+    "name": "crossview",
+    "html_url": "https://github.com/crossplane-contrib/crossview",
+    "description": "A standard Crossplane UI dashboard.",
+    "stargazers_count": 117,
+    "forks_count": 8,
+    "open_issues_count": 12,
+    "language": "JavaScript",
+    "pushed_at": "2026-03-08T19:48:27Z",
+    "fork": false
+  },
+  {
+    "id": 142613190,
+    "name": "banner",
+    "html_url": "https://github.com/moeidheidari/banner",
+    "description": "Banner library for Android.",
+    "stargazers_count": 43,
+    "forks_count": 6,
+    "open_issues_count": 4,
+    "language": "Java",
+    "pushed_at": "2022-07-24T13:38:51Z",
+    "fork": false
+  },
+  {
+    "id": 144551520,
+    "name": "LocationTracker",
+    "html_url": "https://github.com/moeidheidari/LocationTracker",
+    "description": "Android location tracking library.",
+    "stargazers_count": 22,
+    "forks_count": 0,
+    "open_issues_count": 1,
+    "language": "Java",
+    "pushed_at": "2019-06-19T22:00:00Z",
+    "fork": false
+  },
+  {
+    "id": 652192484,
+    "name": "ELK",
+    "html_url": "https://github.com/moeidheidari/ELK",
+    "description": "Elasticsearch, Logstash, and Kibana stack configuration.",
+    "stargazers_count": 20,
+    "forks_count": 0,
+    "open_issues_count": 4,
+    "language": "Shell",
+    "pushed_at": "2022-07-24T13:36:46Z",
+    "fork": false
+  },
+  {
+    "id": 502958815,
+    "name": "intersection-over-union",
+    "html_url": "https://github.com/moeidheidari/intersection-over-union",
+    "description": "Intersection-over-Union (IoU) calculation service for bounding boxes.",
+    "stargazers_count": 20,
+    "forks_count": 1,
+    "open_issues_count": 2,
+    "language": "Python",
+    "pushed_at": "2023-04-12T13:42:32Z",
+    "fork": false
+  }
+  ]
+}
