@@ -3,7 +3,6 @@
 import {
   Box,
   Button,
-  Card,
   Flex,
   Grid,
   Heading,
@@ -14,6 +13,7 @@ import {
 import NextLink from "next/link";
 import { useMemo, useState } from "react";
 import { formatDate } from "./date";
+import { PostCard } from "../components/post-card";
 
 type BlogPost = {
   slug: string;
@@ -123,21 +123,14 @@ export default function BlogClient({ posts }: BlogClientProps) {
           <Heading size="md" mb={4}>Newest posts</Heading>
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={3}>
             {newestPosts.map((post) => (
-              <Card.Root key={post.slug} backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
-                <Card.Body>
-                  <Text fontSize="sm" color="fg.muted">{formatDate(post.pushedAt ?? post.metadata.publishedAt)}</Text>
-                  <Heading size="sm" mt={2}>{post.metadata.title}</Heading>
-                  {post.topics.length > 0 && (
-                    <Flex gap={1} wrap="wrap" mt={2}>
-                      {post.topics.map((t) => <TopicBadge key={t} label={t} />)}
-                    </Flex>
-                  )}
-                  <Text mt={2} color="fg.muted">{post.metadata.summary}</Text>
-                  <Button asChild size="sm" variant="outline" mt={4} width="fit-content">
-                    <NextLink href={`/blog/${post.slug}`}>Read</NextLink>
-                  </Button>
-                </Card.Body>
-              </Card.Root>
+              <PostCard
+                key={post.slug}
+                slug={post.slug}
+                title={post.metadata.title}
+                summary={post.metadata.summary}
+                publishedAt={post.pushedAt ?? post.metadata.publishedAt}
+                topics={post.topics}
+              />
             ))}
           </Grid>
         </Box>
@@ -157,41 +150,35 @@ export default function BlogClient({ posts }: BlogClientProps) {
             </Flex>
           </Flex>
 
-          <Box w="full" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.300" borderRadius="md">
-            <Table.Root variant="line" size="sm" w="full" tableLayout="fixed">
+          <Box w="full" borderWidth="1px" borderColor="whiteAlpha.300" borderRadius="md" overflow="hidden">
+            <Table.Root variant="line" size="sm" width="100%" minWidth="100%" tableLayout="fixed">
               <Table.Header>
-                <Table.Row>
-                  <Table.ColumnHeader w="32%">Title</Table.ColumnHeader>
-                  <Table.ColumnHeader w="15%">Published</Table.ColumnHeader>
-                  <Table.ColumnHeader w="28%">Topics</Table.ColumnHeader>
-                  <Table.ColumnHeader w="15%">Summary</Table.ColumnHeader>
-                  <Table.ColumnHeader w="10%" textAlign="right">Action</Table.ColumnHeader>
+                <Table.Row w="full">
+                  <Table.ColumnHeader w={{ base: "50%", md: "40%" }}>Title</Table.ColumnHeader>
+                  <Table.ColumnHeader w={{ base: "25%", md: "15%" }}>Published</Table.ColumnHeader>
+                  <Table.ColumnHeader w={{ base: "25%", md: "30%" }}>Topics</Table.ColumnHeader>
+                  <Table.ColumnHeader w={{ base: "0%", md: "15%" }} textAlign="right" display={{ base: "none", md: "table-cell" }}>Action</Table.ColumnHeader>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
                 {paginatedPosts.map((post) => (
-                  <Table.Row key={post.slug}>
-                    <Table.Cell>
-                      <Text fontWeight="medium" title={post.metadata.title} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
+                  <Table.Row w="full" key={post.slug}>
+                    <Table.Cell w={{ base: "50%", md: "40%" }}>
+                      <Text fontWeight="medium" title={post.metadata.title} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm" maxW="100%">
                         {post.metadata.title}
                       </Text>
                     </Table.Cell>
-                    <Table.Cell>
-                      <Text overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
+                    <Table.Cell w={{ base: "25%", md: "15%" }}>
+                      <Text overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm">
                         {formatDate(post.pushedAt ?? post.metadata.publishedAt)}
                       </Text>
                     </Table.Cell>
-                    <Table.Cell>
-                      <Flex gap={1} wrap="wrap">
+                    <Table.Cell w={{ base: "25%", md: "30%" }}>
+                      <Flex gap={0.5} wrap="wrap">
                         {post.topics.map((t) => <TopicBadge key={t} label={t} />)}
                       </Flex>
                     </Table.Cell>
-                    <Table.Cell>
-                      <Text title={post.metadata.summary} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
-                        {post.metadata.summary}
-                      </Text>
-                    </Table.Cell>
-                    <Table.Cell textAlign="right">
+                    <Table.Cell w="15%" textAlign="right" display={{ base: "none", md: "table-cell" }}>
                       <Button asChild size="xs" variant="outline">
                         <NextLink href={`/blog/${post.slug}`}>Read</NextLink>
                       </Button>

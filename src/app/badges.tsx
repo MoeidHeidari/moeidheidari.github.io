@@ -1,20 +1,24 @@
-import { Badge, Flex } from "@chakra-ui/react"
+import { Badge, Flex, Stack, Heading } from "@chakra-ui/react"
 
 
 export const Badges = () => {
+  const skills = [
+    "Kubernetes", "AWS", "Java", "Golang", "TypeScript", "Python",
+    "Docker", "Terraform", "DevOps", "GitOps", "Microservices",
+    "Distributed Systems", "Event-Driven Architecture", "System Design",
+    "High Availability", "High Performance Computing", "Scalability", "Cloud-Native"
+  ]
+
   return (
-    <Flex py={2} wrap="wrap" gap={2}>
-      <Badge size="lg" variant="outline">Kubernetes</Badge>
-      <Badge size="lg" variant="outline">AWS</Badge>
-      <Badge size="lg" variant="outline">Java</Badge>
-      <Badge size="lg" variant="outline">Golang</Badge>
-      <Badge size="lg" variant="outline">Devops</Badge>
-      <Badge size="lg" variant="outline">GitOps</Badge>
-      <Badge size="lg" variant="outline">Microservices</Badge>
-      <Badge size="lg" variant="outline">Scalability</Badge>
-      <Badge size="lg" variant="outline">High Performance Computing</Badge>
-      <Badge size="lg" variant="outline">High availability</Badge>
-      <Badge size="lg" variant="outline">Distributed systems</Badge>
-    </Flex>
+    <Stack gap={4}>
+      <Heading size="sm">Skills & Expertise</Heading>
+      <Flex wrap="wrap" gap={2}>
+        {skills.map((skill) => (
+          <Badge key={skill} size="lg" variant="outline">
+            {skill}
+          </Badge>
+        ))}
+      </Flex>
+    </Stack>
   )
 }

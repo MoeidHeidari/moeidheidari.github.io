@@ -46,7 +46,12 @@ function CustomLink(props:any) {
 }
 
 function RoundedImage(props:any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+  return <Image alt={props.alt} className="rounded-lg" quality={100} sizes="(max-width: 768px) 100vw, 800px" style={{ width: '100%', height: 'auto' }} {...props} />
+}
+
+function RawImage(props:any) {
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img alt={props.alt ?? ''} style={{ width: '100%', height: 'auto', borderRadius: '0.5rem', display: 'block' }} {...props} />
 }
 
 function Code({ children, ...props } : {children: any}) {
@@ -95,6 +100,7 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: RoundedImage,
+  img: RawImage,
   a: CustomLink,
   code: Code,
   Table,

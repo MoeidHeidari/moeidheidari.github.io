@@ -13,8 +13,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params } : { params: any }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+export async function generateMetadata({ params } : { params: any }) {
+  const { slug } = await params
+  let post = getBlogPosts().find((post) => post.slug === slug)
   if (!post) {
     return
   }
@@ -98,10 +99,15 @@ export default async function Blog({ params }: { params: any }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
+        <Link href="/blog" style={{ padding: '0.5rem 1rem', borderRadius: '0.375rem', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap', width: 'fit-content' }}>
+          ← Back
+        </Link>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.2, color: '#fff', textWrap: 'balance' } as React.CSSProperties}>
+          {post.metadata.title}
+        </h1>
+      </div>
+      <div className="flex justify-between items-center mb-8 text-sm">
         <p className="text-sm text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>

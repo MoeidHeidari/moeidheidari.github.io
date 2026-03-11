@@ -69,8 +69,14 @@ html {
 }
 
 .prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.prose img[src] {
+  image-rendering: high-quality;
 }
 
 .prose p {
