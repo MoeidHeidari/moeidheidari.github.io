@@ -5,6 +5,7 @@ import NextLink from "next/link";
 export const links = [
   { name: "home", href: "/" },
   { name: "blog", href: "/blog" },
+  { name: "publications", href: "/publications" },
   { name: "mentorship", href: "/mentorship" },
   { name: "opensource", href: "/opensource" },
 ];

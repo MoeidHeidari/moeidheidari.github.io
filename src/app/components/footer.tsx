@@ -13,6 +13,7 @@ const socialLinks = [
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
+  { label: "Publications", href: "/publications" },
   { label: "Mentorship", href: "/mentorship" },
   { label: "Open Source", href: "/opensource" },
 ];

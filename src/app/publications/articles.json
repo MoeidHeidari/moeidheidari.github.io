@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Mastering Crossview Deployment: Securing Your Crossplane Dashboard in an Enterprise Kubernetes Environment",
+    "platform": "Medium",
+    "publishedAt": "Feb 17, 2026",
+    "url": "https://medium.com/@S.MoeidHeidari/mastering-crossview-deployment-securing-your-crossplane-dashboard-in-an-enterprise-kubernetes-71b9b8758bf6",
+    "summary": "Enterprise-focused Helm deployment guide for Crossview with auth modes, hardening, and scaling practices."
+  },
+  {
+    "title": "Crossview",
+    "platform": "Medium",
+    "publishedAt": "Dec 15, 2025",
+    "url": "https://medium.com/@S.MoeidHeidari/crossview-c74539126ce9",
+    "summary": "Overview of Crossview, an open-source dashboard for Crossplane resource management."
+  },
+  {
+    "title": "How to forward the traffic from external IP to the specific KIND (Kubernetes in docker) cluster with IPtables (DNAT)",
+    "platform": "Medium",
+    "publishedAt": "Sep 11, 2022",
+    "url": "https://medium.com/@S.MoeidHeidari/how-to-forward-the-traffic-from-external-ip-to-the-specific-kind-kubernetes-in-docker-cluster-2367acb0a189",
+    "summary": "Practical networking guide for forwarding traffic into KIND clusters with DNAT rules."
+  },
+  {
+    "title": "From VoIP and SIP to WebRTC",
+    "platform": "Medium",
+    "publishedAt": "Aug 2, 2022",
+    "url": "https://medium.com/@S.MoeidHeidari/from-sip-to-webrtc-95f2ae38696e",
+    "summary": "Step-by-step guide to bridge WebRTC clients with legacy SIP infrastructure."
+  },
+  {
+    "title": "CKD",
+    "platform": "LinkedIn",
+    "publishedAt": "Jul 25, 2022",
+    "url": "https://www.linkedin.com/pulse/ckd-moeid-heidari?tl=en",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "Code optimization technique",
+    "platform": "LinkedIn",
+    "publishedAt": "Jul 11, 2023",
+    "url": "https://www.linkedin.com/pulse/code-optimization-technique-moeid-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "How to forward the traffic from external IP to the specific KIND (Kubernetes in docker) cluster with IPtables (DNAT)",
+    "platform": "LinkedIn",
+    "publishedAt": "September 11, 2022",
+    "url": "https://www.linkedin.com/pulse/how-forward-traffic-from-external-ip-specific-kind-docker-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "Zigbee and its application in IoT alongside conversion to MQTT",
+    "platform": "LinkedIn",
+    "publishedAt": "July 27, 2022",
+    "url": "https://www.linkedin.com/pulse/zigbee-its-application-iot-alongside-conversion-mqtt-moeid-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "A powerful successor of C++",
+    "platform": "LinkedIn",
+    "publishedAt": "July 23, 2022",
+    "url": "https://www.linkedin.com/pulse/powerful-successor-c-moeid-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "Why we should use Promise.all in JavaScript",
+    "platform": "LinkedIn",
+    "publishedAt": "July 16, 2022",
+    "url": "https://www.linkedin.com/pulse/why-we-should-use-promiseall-javascript-moeid-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "how to make a CLI application in go",
+    "platform": "LinkedIn",
+    "publishedAt": "June 27, 2022",
+    "url": "https://www.linkedin.com/pulse/how-make-cli-application-go-moeid-heidari/",
+    "note": "LinkedIn may require sign-in to view full article content."
+  },
+  {
+    "title": "Elevate Your Golang Tests with Database Mocking: A Step-by-Step Guide",
+    "platform": "Medium",
+    "publishedAt": "June 22, 2023",
+    "url": "https://medium.com/@moeid_72300/elevate-your-golang-tests-with-database-mocking-a-step-by-step-guide-ee961da7600",
+    "note": "Medium may require sign-in to view full article content."
+  },
+  {
+    "title": "Container runtime innermost architecture (Part 1)",
+    "platform": "Medium",
+    "publishedAt": "March 08, 2023",
+    "url": "https://medium.com/@moeid_72300/container-runtime-innermost-architecture-part-1-163a89a56e5f",
+    "note": "Medium may require sign-in to view full article content."
+  },
+  {
+    "title": "Container runtime innermost architecture (Part 2)",
+    "platform": "Medium",
+    "publishedAt": "Jun 18, 2023",
+    "url": "https://medium.com/@moeid_72300/container-runtime-innermost-architecture-part-2-fe81c8418c0",
+    "note": "Medium may require sign-in to view full article content."
+  }
+]

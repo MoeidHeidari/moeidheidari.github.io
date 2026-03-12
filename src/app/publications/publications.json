@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Multipurpose Cloud-Based Compiler Based on Microservice Architecture and Container Orchestration",
+    "year": 2022,
+    "venue": "Symmetry",
+    "type": "Journal",
+    "doi": "10.3390/sym14091818",
+    "sourceLabel": "ORCID / MDPI",
+    "sourceUrl": "https://doi.org/10.3390/sym14091818"
+  },
+  {
+    "title": "Using OpenMP to Optimize Model Training Process in Machine Learning Algorithms",
+    "year": 2021,
+    "venue": "II International Conference on Neural Networks and Neurotechnologies (NeuroNT)",
+    "type": "Conference",
+    "doi": "10.1109/NeuroNT53022.2021.9472809",
+    "sourceLabel": "ORCID",
+    "sourceUrl": "https://doi.org/10.1109/NeuroNT53022.2021.9472809"
+  },
+  {
+    "title": "Optimizing regular computations based on neural networks and Graph Traversal",
+    "year": 2021,
+    "venue": "Procedia Computer Science",
+    "type": "Journal",
+    "doi": "10.1016/j.procs.2021.04.221",
+    "sourceLabel": "ORCID",
+    "sourceUrl": "https://doi.org/10.1016/j.procs.2021.04.221"
+  },
+  {
+    "title": "Mathematical Computations Based on a Pre-trained AI Model and Graph Traversal",
+    "year": 2020,
+    "venue": "9th Mediterranean Conference on Embedded Computing (MECO)",
+    "type": "Conference",
+    "doi": "10.1109/MECO49872.2020.9134081",
+    "sourceLabel": "DBLP / ORCID",
+    "sourceUrl": "https://doi.org/10.1109/MECO49872.2020.9134081"
+  },
+  {
+    "title": "Towards optimization of big numbers computation through an AI pre-trained model and graph traversal",
+    "year": 2020,
+    "venue": "XXIII International Conference on Soft Computing and Measurements (SCM)",
+    "type": "Conference",
+    "doi": "10.1109/SCM50615.2020.9198759",
+    "sourceLabel": "ORCID",
+    "sourceUrl": "https://doi.org/10.1109/SCM50615.2020.9198759"
+  },
+  {
+    "title": "A BETTER HUMAN-MACHINE INTERACTION",
+    "year": 2020,
+    "venue": "ResearchGate listing",
+    "type": "Article",
+    "sourceLabel": "ResearchGate",
+    "sourceUrl": "https://www.researchgate.net/publication/339936011_A_BETTER_HUMAN-MACHINE_INTERACTION",
+    "note": "Listed on ResearchGate profile; DOI not shown in public summary."
+  }
+]

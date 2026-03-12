@@ -14,17 +14,22 @@ import React from 'react'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Moeid Heidari',
+    template: '%s | Moeid Heidari',
   },
-  description: 'This is my portfolio.',
+  description: 'Cloud engineer portfolio, publications, and articles by Moeid Heidari.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Moeid Heidari',
+    description: 'Cloud engineer portfolio, publications, and articles by Moeid Heidari.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Moeid Heidari',
     locale: 'en_US',
     type: 'website',
+  },
+  icons: {
+    icon: [{ url: '/icon', type: 'image/png' }],
+    shortcut: ['/icon'],
+    apple: [{ url: '/icon', type: 'image/png' }],
   },
   robots: {
     index: true,
