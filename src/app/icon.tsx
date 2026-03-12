@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+export const dynamic = "force-static";
 export const runtime = "nodejs";
 export const size = {
   width: 64,
