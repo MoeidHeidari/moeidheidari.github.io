@@ -9,6 +9,7 @@ import { baseUrl } from './sitemap'
 import { Provider } from 'src/components/ui/provider'
 import { Box, Flex } from '@chakra-ui/react'
 import Navbar from './components/nav'
+import React from 'react'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -53,17 +54,23 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body style={{ backgroundColor: '#000', color: '#fff' }}>
+      <head>
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var d=t==="light"||t==="dark"?t:(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");var e=document.documentElement;e.classList.remove("light","dark");e.classList.add(d);e.style.colorScheme=d;}catch(_){}})();`,
+          }}
+        />
+      </head>
+      <body style={{ backgroundColor: 'var(--bg)', color: 'var(--fg)' }}>
         <Provider>
           <Flex
             as="header"
             position="fixed"
             top="0"
-            backdropBlur="md"
-            backdropFilter="auto"
-            backgroundColor="blackAlpha.700"
             w="100%"
             zIndex="sticky"
+            style={{ backgroundColor: 'var(--nav-bg)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' } as React.CSSProperties}
           >
             <Navbar />
           </Flex>

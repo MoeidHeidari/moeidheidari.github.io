@@ -5,8 +5,21 @@
   color: #fefefe;
 }
 
-/* Sugar-high syntax token colors (dark theme) */
+/* Dark theme defaults — matches defaultTheme="dark", prevents FOUC */
 :root {
+  --bg: #000000;
+  --fg: #ffffff;
+  --fg-muted: #a3a3a3;
+  --nav-bg: rgba(0, 0, 0, 0.75);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-hover: rgba(255, 255, 255, 0.35);
+  --code-bg: #171717;
+  --code-border: #262626;
+  --card-hover-bg: rgba(255, 255, 255, 0.04);
+  --bar-track: rgba(255, 255, 255, 0.08);
+  --bar-fill: rgba(255, 255, 255, 0.64);
+
+  /* Sugar-high dark theme */
   --sh-class: #4c97f8;
   --sh-identifier: #e2e8f0;
   --sh-sign: #8996a3;
@@ -16,11 +29,47 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+
+  color-scheme: dark;
+}
+
+/* Light theme overrides */
+html.light {
+  --bg: #ffffff;
+  --fg: #111111;
+  --fg-muted: #6b7280;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --border-color: rgba(0, 0, 0, 0.15);
+  --border-hover: rgba(0, 0, 0, 0.35);
+  --code-bg: #f4f4f5;
+  --code-border: #e4e4e7;
+  --card-hover-bg: rgba(0, 0, 0, 0.04);
+  --bar-track: rgba(0, 0, 0, 0.08);
+  --bar-fill: rgba(0, 0, 0, 0.5);
+
+  /* Sugar-high light theme */
+  --sh-class: #2563eb;
+  --sh-identifier: #1e293b;
+  --sh-sign: #64748b;
+  --sh-string: #0f766e;
+  --sh-keyword: #dc2626;
+  --sh-comment: #9ca3af;
+  --sh-jsxliterals: #4f46e5;
+  --sh-property: #c2410c;
+  --sh-entity: #c2410c;
+
+  color-scheme: light;
 }
 
 html {
   min-width: 360px;
-  color-scheme: dark;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 .prose .anchor {
@@ -42,8 +91,8 @@ html {
 }
 
 .prose .anchor:after {
-  @apply text-neutral-700;
   content: '#';
+  color: var(--fg-muted);
 }
 
 .prose *:hover > .anchor {
@@ -51,7 +100,12 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-800 py-2 px-3 text-sm;
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
 }
 
 .prose code {
@@ -80,35 +134,61 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-200;
+  margin: 1rem 0;
+  color: var(--fg);
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2 text-white;
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg);
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg);
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2 text-white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg);
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2 text-white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--fg);
 }
 
 .prose strong {
-  @apply font-medium text-white;
+  font-weight: 500;
+  color: var(--fg);
 }
 
 .prose ul {
-  @apply list-disc pl-6 text-neutral-200;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--fg);
 }
 
 .prose ol {
-  @apply list-decimal pl-6 text-neutral-200;
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  color: var(--fg);
 }
 
 .prose > :first-child {
@@ -134,13 +214,37 @@ input[type='email'] {
   appearance: none;
 }
 
-table {
+/* Scope table scroll to MDX prose only — not Chakra UI tables */
+.prose table {
   display: block;
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
 }
 
+/* Theme-aware utility classes */
+.link-border {
+  border: 1px solid var(--border-color) !important;
+}
+.link-border:hover {
+  border-color: var(--border-hover) !important;
+}
+tr.row-hover:hover td {
+  background-color: var(--card-hover-bg) !important;
+}
+
 .title {
   text-wrap: balance;
+}
+
+/* Post card theme-aware hover */
+.post-card {
+  border-color: var(--border-color) !important;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.post-card:hover {
+  border-color: var(--border-hover) !important;
+  background-color: var(--card-hover-bg) !important;
 }

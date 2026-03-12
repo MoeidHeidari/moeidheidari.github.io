@@ -23,20 +23,12 @@ export function PostCard({ slug, title, summary, publishedAt, topics }: PostCard
     <Card.Root 
       backgroundColor="transparent" 
       borderWidth="1px" 
-      borderColor="whiteAlpha.300"
-      style={{
-        transition: "all 0.3s ease",
-        cursor: "pointer",
-      }}
-      _hover={{
-        borderColor: "whiteAlpha.500",
-        bg: "whiteAlpha.50",
-      }}
+      className="post-card"
     >
       <Card.Body>
         <Stack gap={3} h="full">
           <Flex justify="space-between" align="flex-start" gap={2}>
-            <Text fontSize="xs" color="fg.muted" fontWeight="medium">
+            <Text fontSize="xs" fontWeight="medium" style={{ color: 'var(--fg-muted)' }}>
               {formatDate(publishedAt)}
             </Text>
             {topics && topics[0] && (
@@ -46,9 +38,8 @@ export function PostCard({ slug, title, summary, publishedAt, topics }: PostCard
                 py={1} 
                 borderRadius="md" 
                 borderWidth="1px"
-                borderColor="whiteAlpha.300"
-                color="fg.muted"
                 whiteSpace="nowrap"
+                style={{ borderColor: 'var(--border-color)', color: 'var(--fg-muted)' }}
               >
                 {topics[0]}
               </Box>
@@ -56,7 +47,7 @@ export function PostCard({ slug, title, summary, publishedAt, topics }: PostCard
           </Flex>
           <Stack gap={2} flex={1}>
             <Heading size="sm" lineHeight="1.4">{title}</Heading>
-            <Text fontSize="sm" color="fg.muted" lineHeight="1.6">
+            <Text fontSize="sm" lineHeight="1.6" style={{ color: 'var(--fg-muted)' }}>
               {summary}
             </Text>
           </Stack>

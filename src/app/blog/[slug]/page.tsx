@@ -100,19 +100,19 @@ export default async function Blog({ params }: { params: any }) {
         }}
       />
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.5rem' }}>
-        <Link href="/blog" style={{ padding: '0.5rem 1rem', borderRadius: '0.375rem', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap', width: 'fit-content' }}>
+        <Link href="/blog" style={{ padding: '0.5rem 1rem', borderRadius: '0.375rem', border: '1px solid var(--border-color)', color: 'var(--fg)', textDecoration: 'none', fontSize: '0.875rem', whiteSpace: 'nowrap', width: 'fit-content', opacity: 0.8 }}>
           ← Back
         </Link>
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.2, color: '#fff', textWrap: 'balance' } as React.CSSProperties}>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.2, color: 'var(--fg)', textWrap: 'balance' } as React.CSSProperties}>
           {post.metadata.title}
         </h1>
       </div>
       <div className="flex justify-between items-center mb-8 text-sm">
-        <p className="text-sm text-neutral-400">
+        <p style={{ fontSize: '0.875rem', color: 'var(--fg-muted)' }}>
           {formatDate(post.metadata.publishedAt)}
         </p>
         {topic && (
-          <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.7)' }}>
+          <span style={{ fontSize: '0.75rem', padding: '2px 8px', borderRadius: '6px', border: '1px solid var(--border-color)', color: 'var(--fg-muted)' }}>
             {topic}
           </span>
         )}
@@ -122,14 +122,14 @@ export default async function Blog({ params }: { params: any }) {
       </article>
 
       {(prevPost || nextPost) && (
-        <nav style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+        <nav style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
           <div style={{ flex: 1 }}>
             {prevPost && (
               <Link href={`/blog/${prevPost.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--fg-muted)', marginBottom: '4px' }}>
                   ← Previous{topic ? ` in ${topic}` : ''}
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
+                <div style={{ fontSize: '0.9rem', color: 'var(--fg)', fontWeight: 500 }}>
                   {prevPost.metadata.title}
                 </div>
               </Link>
@@ -138,10 +138,10 @@ export default async function Blog({ params }: { params: any }) {
           <div style={{ flex: 1, textAlign: 'right' }}>
             {nextPost && (
               <Link href={`/blog/${nextPost.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', marginBottom: '4px' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--fg-muted)', marginBottom: '4px' }}>
                   Next{topic ? ` in ${topic}` : ''} →
                 </div>
-                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
+                <div style={{ fontSize: '0.9rem', color: 'var(--fg)', fontWeight: 500 }}>
                   {nextPost.metadata.title}
                 </div>
               </Link>

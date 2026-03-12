@@ -107,11 +107,11 @@ export default function MentorshipPage() {
           <Heading size="md" mb={4}>Reviews</Heading>
           <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", xl: "repeat(3, 1fr)" }} gap={3}>
             {reviewItems.map((review) => (
-              <Card.Root key={review.author + review.date} backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+              <Card.Root key={review.author + review.date} backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
                 <Card.Body>
                   <Flex gap={3} align="center">
                     <Link href={review.profileUrl} target="_blank" rel="noreferrer">
-                      <Box w="44px" h="44px" borderRadius="full" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.400">
+                      <Box w="44px" h="44px" borderRadius="full" overflow="hidden" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
                         <img src={review.avatar} alt={review.author} width="44" height="44" />
                       </Box>
                     </Link>
@@ -164,7 +164,7 @@ export default function MentorshipPage() {
         <Box>
           <Heading size="md" mb={4}>Mentorship insights</Heading>
           <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={3}>
-            <Card.Root backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+            <Card.Root backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
               <Card.Body>
                 <Grid templateColumns="repeat(3, 1fr)" gap={3}>
                   <Box>
@@ -182,7 +182,7 @@ export default function MentorshipPage() {
                 </Grid>
               </Card.Body>
             </Card.Root>
-            <Card.Root backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+            <Card.Root backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
               <Card.Body>
                 <Stack gap={3}>
                   {mentorshipBars.map((bar) => (
@@ -191,8 +191,8 @@ export default function MentorshipPage() {
                         <Text fontSize="sm">{bar.label}</Text>
                         <Text fontSize="sm" color="fg.muted">{bar.value}</Text>
                       </Flex>
-                      <Box h="8px" borderRadius="md" bg="whiteAlpha.200" overflow="hidden">
-                        <Box h="full" w={`${bar.percent}%`} bg="whiteAlpha.700" />
+                      <Box h="8px" borderRadius="md" overflow="hidden" style={{ backgroundColor: 'var(--bar-track)' }}>
+                        <Box h="full" w={`${bar.percent}%`} style={{ backgroundColor: 'var(--bar-fill)' }} />
                       </Box>
                     </Box>
                   ))}
@@ -206,7 +206,7 @@ export default function MentorshipPage() {
           <Heading size="md" mb={4}>Awards</Heading>
           <Stack gap={3}>
             {mentorshipProfile.awards.map((award) => (
-              <Card.Root key={award.title} backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+              <Card.Root key={award.title} backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
                 <Card.Body>
                   <Text fontWeight="semibold">{award.title}</Text>
                   <Text color="fg.muted" fontSize="sm">{award.period}</Text>
@@ -232,7 +232,7 @@ export default function MentorshipPage() {
           <Heading size="md" mb={4}>Available sessions</Heading>
           <Stack gap={3}>
             {mentorshipProfile.availableSessions.map((session) => (
-              <Card.Root key={session.title + session.start} backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+              <Card.Root key={session.title + session.start} backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
                 <Card.Body>
                   <Text fontWeight="semibold">{session.title}</Text>
                   <Text color="fg.muted" mt={1}>

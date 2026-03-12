@@ -79,7 +79,7 @@ export default function OpenSourcePage() {
         </Box>
 
         <Grid templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }} gap={3}>
-          <Card.Root backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+          <Card.Root backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
             <Card.Body>
               <Heading size="sm" mb={3}>Open source overview</Heading>
               <Grid templateColumns="repeat(2, 1fr)" gap={3}>
@@ -103,7 +103,7 @@ export default function OpenSourcePage() {
             </Card.Body>
           </Card.Root>
 
-          <Card.Root backgroundColor="transparent" borderWidth="1px" borderColor="whiteAlpha.300">
+          <Card.Root backgroundColor="transparent" borderWidth="1px" style={{ borderColor: 'var(--border-color)' }}>
             <Card.Body>
               <Heading size="sm" mb={3}>Top languages</Heading>
               <Stack gap={3}>
@@ -113,8 +113,8 @@ export default function OpenSourcePage() {
                       <Text fontSize="sm">{language}</Text>
                       <Text fontSize="sm" color="fg.muted">{count}</Text>
                     </Flex>
-                    <Box h="8px" borderRadius="md" bg="whiteAlpha.200" overflow="hidden">
-                      <Box h="full" w={`${(count / topLanguageMax) * 100}%`} bg="whiteAlpha.700" />
+                    <Box h="8px" borderRadius="md" overflow="hidden" style={{ backgroundColor: 'var(--bar-track)' }}>
+                      <Box h="full" w={`${(count / topLanguageMax) * 100}%`} style={{ backgroundColor: 'var(--bar-fill)' }} />
                     </Box>
                   </Box>
                 ))}
@@ -150,8 +150,8 @@ export default function OpenSourcePage() {
             display="block"
             overflow="hidden"
             borderWidth="1px"
-            borderColor="whiteAlpha.300"
             borderRadius="md"
+            style={{ borderColor: 'var(--border-color)' }}
           >
             <Table.Root size="md" variant="line" interactive w="full" minW="full" tableLayout="fixed">
               <Table.Header>
@@ -174,7 +174,7 @@ export default function OpenSourcePage() {
                     : description;
 
                   return (
-                    <Table.Row key={repo.id} _hover={{ bg: "whiteAlpha.100" }}>
+                    <Table.Row key={repo.id} className="row-hover">
                       <Table.Cell maxW={0}>
                         <Text fontWeight="medium" title={repo.name} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap">
                           {repo.name}

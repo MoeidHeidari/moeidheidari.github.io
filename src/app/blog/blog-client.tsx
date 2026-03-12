@@ -39,10 +39,9 @@ function TopicBadge({ label }: { label: string }) {
       py="1px"
       borderRadius="md"
       borderWidth="1px"
-      borderColor="whiteAlpha.400"
       fontSize="xs"
-      color="whiteAlpha.800"
       lineHeight="1.6"
+      style={{ borderColor: 'var(--border-color)', color: 'var(--fg-muted)' }}
     >
       {label}
     </Box>
@@ -98,117 +97,126 @@ export default function BlogClient({ posts }: BlogClientProps) {
       <Flex direction="column" gap={{ base: 5, md: 6 }}>
         <Heading size={{ base: "2xl", md: "3xl" }}>My Blog</Heading>
 
-        {/* Topic filter pills */}
-        <Flex gap={2} wrap="wrap">
-          <Button
-            size="xs"
-            variant={selectedTopic === null ? "solid" : "outline"}
-            onClick={() => { setSelectedTopic(null); setPage(1); }}
-          >
-            All
-          </Button>
-          {allTopics.map((topic) => (
-            <Button
-              key={topic}
-              size="xs"
-              variant={selectedTopic === topic ? "solid" : "outline"}
-              onClick={() => handleTopicClick(topic)}
+        <Grid templateColumns={{ base: "1fr", md: "180px 1fr" }} gap={{ base: 6, md: 10 }} alignItems="start">
+          {/* Left: Topics sidebar */}
+          <Box>
+            <Text
+              fontSize="xs"
+              fontWeight="semibold"
+              mb={3}
+              style={{ color: "var(--fg-muted)", textTransform: "uppercase", letterSpacing: "0.06em" }}
             >
-              {topic}
-            </Button>
-          ))}
-        </Flex>
-
-        <Box>
-          <Heading size="md" mb={4}>Newest posts</Heading>
-          <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={3}>
-            {newestPosts.map((post) => (
-              <PostCard
-                key={post.slug}
-                slug={post.slug}
-                title={post.metadata.title}
-                summary={post.metadata.summary}
-                publishedAt={post.pushedAt ?? post.metadata.publishedAt}
-                topics={post.topics}
-              />
-            ))}
-          </Grid>
-        </Box>
-
-        <Box>
-          <Flex justify="space-between" align={{ base: "flex-start", md: "center" }} direction={{ base: "column", md: "row" }} gap={3} mb={4}>
-            <Heading size="md">All articles</Heading>
-            <Flex gap={2} w={{ base: "full", md: "360px" }}>
-              <Input
-                value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setPage(1);
-                }}
-                placeholder="Search articles"
-              />
+              Topics
+            </Text>
+            <Flex direction="column" gap={1}>
+              <Button
+                size="sm"
+                variant={selectedTopic === null ? "solid" : "ghost"}
+                justifyContent="flex-start"
+                onClick={() => { setSelectedTopic(null); setPage(1); }}
+              >
+                All posts
+              </Button>
+              {allTopics.map((topic) => (
+                <Button
+                  key={topic}
+                  size="sm"
+                  variant={selectedTopic === topic ? "solid" : "ghost"}
+                  justifyContent="flex-start"
+                  onClick={() => handleTopicClick(topic)}
+                >
+                  {topic}
+                </Button>
+              ))}
             </Flex>
-          </Flex>
-
-          <Box w="full" borderWidth="1px" borderColor="whiteAlpha.300" borderRadius="md" overflow="hidden">
-            <Table.Root variant="line" size="sm" width="100%" minWidth="100%" tableLayout="fixed">
-              <Table.Header>
-                <Table.Row w="full">
-                  <Table.ColumnHeader w={{ base: "50%", md: "40%" }}>Title</Table.ColumnHeader>
-                  <Table.ColumnHeader w={{ base: "25%", md: "15%" }}>Published</Table.ColumnHeader>
-                  <Table.ColumnHeader w={{ base: "25%", md: "30%" }}>Topics</Table.ColumnHeader>
-                  <Table.ColumnHeader w={{ base: "0%", md: "15%" }} textAlign="right" display={{ base: "none", md: "table-cell" }}>Action</Table.ColumnHeader>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body>
-                {paginatedPosts.map((post) => (
-                  <Table.Row w="full" key={post.slug}>
-                    <Table.Cell w={{ base: "50%", md: "40%" }}>
-                      <Text fontWeight="medium" title={post.metadata.title} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm" maxW="100%">
-                        {post.metadata.title}
-                      </Text>
-                    </Table.Cell>
-                    <Table.Cell w={{ base: "25%", md: "15%" }}>
-                      <Text overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm">
-                        {formatDate(post.pushedAt ?? post.metadata.publishedAt)}
-                      </Text>
-                    </Table.Cell>
-                    <Table.Cell w={{ base: "25%", md: "30%" }}>
-                      <Flex gap={0.5} wrap="wrap">
-                        {post.topics.map((t) => <TopicBadge key={t} label={t} />)}
-                      </Flex>
-                    </Table.Cell>
-                    <Table.Cell w="15%" textAlign="right" display={{ base: "none", md: "table-cell" }}>
-                      <Button asChild size="xs" variant="outline">
-                        <NextLink href={`/blog/${post.slug}`}>Read</NextLink>
-                      </Button>
-                    </Table.Cell>
-                  </Table.Row>
-                ))}
-              </Table.Body>
-            </Table.Root>
           </Box>
 
-          {totalPages > 1 && (
-            <Flex justify="space-between" align="center" mt={4}>
-              <Text fontSize="sm" color="fg.muted">Page {safePage} of {totalPages}</Text>
-              <Flex gap={2} wrap="wrap" justify="flex-end">
-                <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage(1)}>
-                  First
-                </Button>
-                <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>
-                  Previous
-                </Button>
-                <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage((value) => Math.min(totalPages, value + 1))}>
-                  Next
-                </Button>
-                <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage(totalPages)}>
-                  Last
-                </Button>
+          {/* Right: Main content */}
+          <Flex direction="column" gap={8}>
+            <Box>
+              <Heading size="md" mb={4}>Newest posts</Heading>
+              <Grid templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={3}>
+                {newestPosts.map((post) => (
+                  <PostCard
+                    key={post.slug}
+                    slug={post.slug}
+                    title={post.metadata.title}
+                    summary={post.metadata.summary}
+                    publishedAt={post.pushedAt ?? post.metadata.publishedAt}
+                    topics={post.topics}
+                  />
+                ))}
+              </Grid>
+            </Box>
+
+            <Box>
+              <Flex justify="space-between" align={{ base: "flex-start", md: "center" }} direction={{ base: "column", md: "row" }} gap={3} mb={4}>
+                <Heading size="md">All articles</Heading>
+                <Flex gap={2} w={{ base: "full", md: "300px" }}>
+                  <Input
+                    value={query}
+                    onChange={(event) => {
+                      setQuery(event.target.value);
+                      setPage(1);
+                    }}
+                    placeholder="Search articles"
+                  />
+                </Flex>
               </Flex>
-            </Flex>
-          )}
-        </Box>
+
+              <Box w="full" borderWidth="1px" borderRadius="md" overflow="hidden" style={{ borderColor: 'var(--border-color)' }}>
+                <Table.Root variant="line" size="sm" width="100%" minWidth="100%" tableLayout="fixed">
+                  <Table.Header>
+                    <Table.Row w="full">
+                      <Table.ColumnHeader w={{ base: "50%", md: "40%" }}>Title</Table.ColumnHeader>
+                      <Table.ColumnHeader w={{ base: "25%", md: "15%" }}>Published</Table.ColumnHeader>
+                      <Table.ColumnHeader w={{ base: "25%", md: "30%" }}>Topics</Table.ColumnHeader>
+                      <Table.ColumnHeader w={{ base: "0%", md: "15%" }} textAlign="right" display={{ base: "none", md: "table-cell" }}>Action</Table.ColumnHeader>
+                    </Table.Row>
+                  </Table.Header>
+                  <Table.Body>
+                    {paginatedPosts.map((post) => (
+                      <Table.Row w="full" key={post.slug}>
+                        <Table.Cell w={{ base: "50%", md: "40%" }}>
+                          <Text fontWeight="medium" title={post.metadata.title} overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm" maxW="100%">
+                            {post.metadata.title}
+                          </Text>
+                        </Table.Cell>
+                        <Table.Cell w={{ base: "25%", md: "15%" }}>
+                          <Text overflow="hidden" textOverflow="ellipsis" whiteSpace="nowrap" fontSize="sm">
+                            {formatDate(post.pushedAt ?? post.metadata.publishedAt)}
+                          </Text>
+                        </Table.Cell>
+                        <Table.Cell w={{ base: "25%", md: "30%" }}>
+                          <Flex gap={0.5} wrap="wrap">
+                            {post.topics.map((t) => <TopicBadge key={t} label={t} />)}
+                          </Flex>
+                        </Table.Cell>
+                        <Table.Cell w="15%" textAlign="right" display={{ base: "none", md: "table-cell" }}>
+                          <Button asChild size="xs" variant="outline">
+                            <NextLink href={`/blog/${post.slug}`}>Read</NextLink>
+                          </Button>
+                        </Table.Cell>
+                      </Table.Row>
+                    ))}
+                  </Table.Body>
+                </Table.Root>
+              </Box>
+
+              {totalPages > 1 && (
+                <Flex justify="space-between" align="center" mt={4}>
+                  <Text fontSize="sm" style={{ color: "var(--fg-muted)" }}>Page {safePage} of {totalPages}</Text>
+                  <Flex gap={2} wrap="wrap" justify="flex-end">
+                    <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage(1)}>First</Button>
+                    <Button size="sm" variant="outline" disabled={safePage <= 1} onClick={() => setPage((v) => Math.max(1, v - 1))}>Previous</Button>
+                    <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage((v) => Math.min(totalPages, v + 1))}>Next</Button>
+                    <Button size="sm" variant="outline" disabled={safePage >= totalPages} onClick={() => setPage(totalPages)}>Last</Button>
+                  </Flex>
+                </Flex>
+              )}
+            </Box>
+          </Flex>
+        </Grid>
       </Flex>
     </section>
   );

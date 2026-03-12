@@ -9,7 +9,7 @@ import {
 export function Provider(props: ColorModeProviderProps) {
   return (
     <ChakraProvider value={defaultSystem}>
-      <ClientOnly>
+      <ClientOnly fallback={<>{props.children}</>}>
         <ColorModeProvider {...props} />
       </ClientOnly>
     </ChakraProvider>

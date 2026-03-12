@@ -23,10 +23,6 @@ export function BlogPosts() {
           <GridItem rowSpan={1} colSpan={1} key={post.slug}>
             <Card.Root
               backgroundColor={"transparent"}
-              _hover={{
-                "borderColor": "whiteAlpha.400",
-                "borderWidth": "0.5px",
-              }}
             >
               <Card.Body gap="2">
                 <Card.Title mt="2">
