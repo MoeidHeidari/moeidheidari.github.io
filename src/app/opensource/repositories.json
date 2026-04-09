@@ -1,9 +1,9 @@
 {
   "stats": {
     "repositories": 68,
-    "stars": 758,
+    "stars": 761,
     "forks": 25,
-    "open_issues": 36
+    "open_issues": 45
   },
   "repos": [
   {
@@ -11,7 +11,7 @@
     "name": "crossview",
     "html_url": "https://github.com/crossplane-contrib/crossview",
     "description": "A standard Crossplane UI dashboard.",
-    "stargazers_count": 117,
+    "stargazers_count": 148,
     "forks_count": 8,
     "open_issues_count": 12,
     "language": "JavaScript",

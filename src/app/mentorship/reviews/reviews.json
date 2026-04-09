@@ -1,9 +1,18 @@
 [
   {
+    "author": "Bad G64",
+    "profileUrl": "https://adplist.org/members/bad-g64",
+    "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/4e87cef1ab8b4d8cbf7c0147d9fcbaafFW0dg.webp",
+    "role": "CS undergraduate, Middle East College",
+    "rating": 5,
+    "date": "2026-03-23",
+    "text": "I had an exceptional experience with Mr. Moeid Heidari. His communication was amazing, and he motivated me throughout our session. His subject knowledge, addressing my questions thoroughly. I left feeling empowered and informed. I highly recommend booking a session with him—he is truly a professional."
+  },
+  {
     "author": "Arezoo Montazeri",
     "profileUrl": "https://adplist.org/members/arezoo-montazeri",
-    "avatar": "https://api.dicebear.com/9.x/initials/svg?seed=Laura%20Brown",
-    "role": "Engineering",
+    "avatar": "",
+    "role": "DevOps Engineer, IUST",
     "rating": 5,
     "date": "2026-02-20",
     "text": "Moeid guided me very patiently and carefully. They took time to explain things clearly and answered all my questions. We talked about career choices, the job market, and how to improve my resume. Their advice was practical, clear, and very helpful. I really appreciate his support and guidance."
@@ -12,7 +21,7 @@
     "author": "Muhammad Ganji Nezhad",
     "profileUrl": "https://adplist.org/members/GMYOzDo8Fv",
     "avatar": "https://adplist-bucket.s3.us-east-2.amazonaws.com/media/profile_photos/55e32d03fa70cd3d9d195338ac2b6800-1771604766040.webp",
-    "role": "developr",
+    "role": ".NET Web Developer, Sanat bar ehya",
     "rating": 5,
     "date": "2026-02-20",
     "text": "Moeid is a genuinely honest and patient person. I had a really helpful session with him. He carefully listened to my career and business concerns and helped clear up many of my doubts. The conversation was practical and insightful. I truly appreciate that he even invited me to another free session to keep moving forward. Highly recommended."
@@ -21,7 +30,7 @@
     "author": "Kiyarash Hadidian",
     "profileUrl": "https://adplist.org/members/kiyarash-hadidian",
     "avatar": "https://adplist-bucket.s3.us-east-2.amazonaws.com/media/profile_photos/a7b99c79b0d841aabea885fc2c5e1bc2-1770281475355.webp",
-    "role": "Service NSW",
+    "role": "Frontend Developer, Part Ava",
     "rating": 5,
     "date": "2026-02-15",
     "text": "I really enjoyed my session with Moeid. The conversation was honest, practical, and straight to the point. He helped me see my career path more clearly and pointed out a few things I should improve that I hadn’t noticed before. What I liked most was that his advice was realistic and based on real experience, not just general tips. I left the session with a clearer direction and concrete next steps. Definitely recommend talking to him if you're serious about improving your career."
@@ -30,9 +39,117 @@
     "author": "Majid Roodi",
     "profileUrl": "https://adplist.org/members/majid-roodi",
     "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/e257ff22e3224d57b38e7560630f69d4du6wD.webp",
-    "role": "Various, Thoughtspot, Pinterest, Apple",
+    "role": "DevOps Engineer, Freelance",
     "rating": 5,
     "date": "2026-02-15",
     "text": "My session with Mr. Moeid was one of the best experiences of my life; during our conversation, we discussed new technologies and the transfer of experience. He very patiently checked my resume and took me through all my problems step by step, completely guiding me on what I should do."
+  },
+  {
+    "author": "Ali Noorian",
+    "profileUrl": "",
+    "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/90cf754e03db4517a5ac3c8f6bbc60a1pkzlZ.webp",
+    "role": "DevOps, AI",
+    "rating": 5,
+    "date": "2026-02-15",
+    "text": "I had an outstanding session with Moeid Heidari, who demonstrated amazing communication and subject knowledge in cloud and infrastructure. His clear explanations and practical, actionable guidance not only motivated me but also enhanced my problem-solving skills. I wholeheartedly recommend booking a session with Moeid if you want to exceed your expectations."
+  },
+  {
+    "author": "Mehrad Khavari",
+    "profileUrl": "",
+    "avatar": "https://adplist-bucket.s3.us-east-2.amazonaws.com/media/profile_photos/751efb971f699015b791072cabfc032d-1770737597487.webp",
+    "role": "Junior .Net Developer, None",
+    "rating": 5,
+    "date": "2026-02-14",
+    "text": "My session with Mr.Moeid was one of the best moments for me. He guides me so clearly what to do and what to do for my next steps, and well instructs me about what my problem is and how to fix it, and improves my skills."
+  },
+  {
+    "author": "Rahmat Waisi",
+    "profileUrl": "",
+    "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/342696018562497f8d82a9f2a77ddfbaXdIjd.webp",
+    "role": "Backend Engineer, Ainfluencer",
+    "rating": 5,
+    "date": "2025-11-26",
+    "text": "My session with Moeid was a real lightbulb moment for me. His guidance gave me the clarity to start on a completely new path. I'm so grateful for his help and excited to put it all into practice."
+  },
+  {
+    "author": "mahtab khosromoradi",
+    "profileUrl": "",
+    "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/9f1fa30bab2a4623b949c6ae07a07b2aHbZda.webp",
+    "role": "Data Analyst, Gilan University",
+    "rating": 5,
+    "date": "2025-11-23",
+    "text": "I enjoyed this session and thank him for his guidance. He was a good listener and answered my questions."
+  },
+  {
+    "author": "reza nouri",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "Backend Developer, Omid Tech",
+    "rating": 5,
+    "date": "2025-11-03",
+    "text": "I had an amazing mentoring session with Moeid. He’s one of the most knowledgeable Persian-speaking professionals I’ve met in the Cloud field. The session was supposed to last 30 minutes, but time passed so fast that I didn’t even notice. Moeid explained the Cloud Engineer role — its challenges, responsibilities, and learning path — in a very clear and structured way that made everything easy to understand. What I really appreciated was his kindness and willingness to help."
+  },
+  {
+    "author": "Sajjad Sohrabi",
+    "profileUrl": "https://adplist.org/members/sajjad-sohrabi",
+    "avatar": "https://adplist-bucket.s3.amazonaws.com/media/profile_photos/cb8f56ea15874d0f9c329dc5e95474c58O2Ov.webp",
+    "role": "Software Engineer (back-end), Tetherland.com",
+    "rating": 5,
+    "date": "2025-10-30",
+    "text": "I had an incredible session with my mentor that truly exceeded my expectations. Their deep technical knowledge and exceptional problem-solving skills provided me with invaluable insights. Communication was seamless, and their motivation inspired me to delve deeper into the subject matter. I highly recommend booking a session with this mentor for anyone seeking guidance."
+  },
+  {
+    "author": "Amir Zare",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "DevOps Engineer, ShatelMobile",
+    "rating": 5,
+    "date": "2025-10-24",
+    "text": "We had an insightful session about my career path where he patiently answered my questions and provided solid advice. Moeid is encouraging, honest and motivating as a mentor."
+  },
+  {
+    "author": "Sana Sadeghi",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "UI/UX Designer, Payamenoor University",
+    "rating": 5,
+    "date": "2025-10-14",
+    "text": "I had an absolutely incredible experience with Moeid Heidari as a mentor! From the moment we connected, Moeid's passion for helping others shine through. His expertise is unmatched, and he has a remarkable ability to break down complex concepts into clear, actionable insights. Moeid was genuinely invested in my growth, offering tailored advice that felt both inspiring and practical. His warm, approachable demeanor made every session feel like a conversation with a trusted friend."
+  },
+  {
+    "author": "Arsham Arya",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "Software Engineer, Snapp",
+    "rating": 1,
+    "date": "2024-03-15",
+    "text": "I had high expectations but unfortunately, he didn't participate, I asked for another session, and again, no answer at all. People put their hope in a meeting, as a mentor, if I miss one, at least I'll tell the reason to the mentee."
+  },
+  {
+    "author": "Delaram Gholampoor Sagha",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "Software Engineer, Asan Pardakht",
+    "rating": 1,
+    "date": "2024-03-04",
+    "text": "Moeid is one of the best engineers for guiding the engineering community toward improvement. I recommend him for anyone who is seeking for growth."
+  },
+  {
+    "author": "Maria",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "Junior DevOps engineer, Freelance/self-employed",
+    "rating": 5,
+    "date": "2024-02-25",
+    "text": "I recently had the privilege of participating in a mentoring session with Mr. Heidari, whose expertise and genuine passion for guiding others created an environment ripe for growth. Through insightful discussions, Mr. Heidari not only identified areas for improvement but also empowered me with the confidence and clarity needed to navigate challenges effectively. I wholeheartedly endorse Mr. Heidari's services to anyone seeking profound and actionable mentorship."
+  },
+  {
+    "author": "Mohammadreza",
+    "profileUrl": "",
+    "avatar": "",
+    "role": "Cybersecurity Student, Padova",
+    "rating": 1,
+    "date": "2023-10-28",
+    "text": "Despite my expectations, he failed to attend the session and remained unresponsive to my attempts to contact him."
   }
 ]
